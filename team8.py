@@ -17,28 +17,26 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-        self.limit=23
-        self.start=0
-        self.ps=''
-        self.os=''
-        self.maxdepth=0
-
+        self.limit=23#time limit
+        self.start=0#start time
+        self.maxdepth=4
+        self.player=0#x=1 o=0
+        self.opponent=0
         self.bestmv=(0,0,0)
-        self.initial_level = 2
-        #self.endtime = 23
         self.inf = 100000000
-        #self.starttime = 0
+
         self.max_player = 1
         self.map_symbol = ['o', 'x']
         self.zob_store = []
         self.hash_store = []
         self.bonus_move_cur = [0 , 0]
-        #self.maxlen = 0
-        #self.mindepth = 9
         self.last_blk_won = 0
+
         for i in range(3):
             self.hash_store.append([0]*3)
+
         self.numsteps = 0
+
         for i in range(36):
             self.zob_store.append(2**i)
         self.dict = {}
@@ -209,76 +207,10 @@ class Player8:
         else:
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
 
-    def idfs(self,board,oldmv,symbol,depth,player):
-        """
-        idfs,minmax,alpha beta pruning implemented
-        """
-        maxdepth=9*9
-        for depth in range(1,maxdepth+1):
-			# self.transpositionTable={}
-            if(time()-self.start)>self.limit:
-                break
-            output = self.alphabetamove(board,oldmv,player,depth)
-            finalMove=output
-		
-        return finalMove
+    
+  
 
-        ######sarthak's function
-        # if depth>self.maxdepth:
-        #     return
-
-        # cells = board.find_valid_move_cells(oldmv)
-
-        # for mv in cells:
-        #     # print mv,depth
-
-        #     self.makemv(board,oldmv,mv,symbol)
-        #     tempboard=deepcopy(board)
-        #     self.idfs(tempboard,mv,symbol,depth+1)
-        #     self.reverse(board,mv)
-
-    def alphabetamove(self,board,old_move,player,depth):
-        """
-        Deciding best move
-        """
-
-        self.nextmoves = board.find_valid_move_cells(old_move)
-        
-        trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
-        
-        curmax = -self.inf
-        
-        ###
-        
-        data = self.bonus_move_cur[player]
-        
-        for moves in self.nextmoves:
-            self.bonus_move_cur[player] = data
-            self.update_hashtable(moves,player)
-            
-            gamepos,status = board.update(old_move,moves,player)
-            if status:
-                self.bonus_move_cur[player] ^= 1
-            else:
-                self.bonus_move_cur[player] = 0
-            
-            if status and (self.bonus_move_cur[player] == 1):
-                player_utility = self.prunealphabeta(board,depth - 1,player,moves,
-                                                        -self.inf,self.inf,player)
-            else:
-                player_utility = self.prunealphabeta(board,depth-1,player^1,moves,
-                                                        -self.inf,self.inf,player)
-            
-            #restore the board states
-            board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
-            board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
-            self.update_hashtable(moves,player)
-
-            if(player_utility > curmax):
-                cur_best_move = moves
-                curmax = player_utility
-        
-        self.bonus_move_cur[player] = data
+    
             
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
         """
@@ -345,63 +277,114 @@ class Player8:
 
 
 
+    def alphabetamove(self,board,old_move,player,depth):
+        """
+        Deciding best move
+        """
+
+        self.nextmoves = board.find_valid_move_cells(old_move)
+        
+        trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
+        
+        curmax = -self.inf
+        
+        ###
+        
+        data = self.bonus_move_cur[player]
+        
+        for moves in self.nextmoves:
+            self.bonus_move_cur[player] = data
+            self.update_hashtable(moves,player)
+            
+            gamepos,status = board.update(old_move,moves,player)
+            if status:
+                self.bonus_move_cur[player] ^= 1
+            else:
+                self.bonus_move_cur[player] = 0
+            
+            if status and (self.bonus_move_cur[player] == 1):
+                player_utility = self.prunealphabeta(board,depth - 1,player,moves,
+                                                        -self.inf,self.inf,player)
+            else:
+                player_utility = self.prunealphabeta(board,depth-1,player^1,moves,
+                                                        -self.inf,self.inf,player)
+            
+            #restore the board states
+            board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
+            board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
+            self.update_hashtable(moves,player)
+
+            if(player_utility > curmax):
+                cur_best_move = moves
+                curmax = player_utility
+        
+        self.bonus_move_cur[player] = data
+
+
+
+    def idfs(self,board,oldmv,depth,player):
+        """
+        idfs returns best move
+        """
+        for depth in range(1,self.maxdepth):
+
+			# self.transpositionTable={}
+            
+            if(time()-self.start)>self.limit:
+                break
+            output = self.alphabetamove(board,oldmv,player,depth)
+		
+        return output
+
+
+
     def move(self,gameboard,oldmove,symbol):
         """
         Main code
         """
+
+        #initialising players
         if symbol=='x':
-            self.ps='x'
-            self.os='o'
+            self.player=1
+            self.opponent=0
         else:
-            self.ps='o'
-            self.os='x'
+            self.player=0
+            self.opponent=1
 
         try:
+            #if first move
             if oldmove == (-1,-1,-1):
                 return self.default
             
+            #start timer
             self.start=time()
-            # print self.start
 
+###################################################################
             print "oldmove::"
             print oldmove
-
             cells = gameboard.find_valid_move_cells(oldmove)
             print cells
-            mvp = raw_input()
+###################################################################
+
+            #calcuolate from hash tables
+            depth=1
 
             tempboard=deepcopy(gameboard)
-            if symbol=='x':
-                player=1
+            tempmove=self.idfs(tempboard,oldmove,depth,self.player)
+
+            status,blk_won=tempboard.update(tempboard,oldmove,tempmove,self.map_symbol[self.player])
+
+            if blk_won:
+                self.last_blk_won^=1
             else:
-                player=0
+                self.last_blk_won=0
 
-            self.idfs(tempboard,oldmove,symbol,0,player)
-            print self.utility(tempboard,symbol)
+            # tempboard.big_boards_status[tempmove[0]][tempmove[1]][tempmove[2]] = "-"
+            # tempboard.small_boards_status[tempmove[0]][tempmove[1]/3][tempmove[2]/3] = "-"
 
-            return cells[random.randrange(len(cells))]
+            return tempmove
 
-        #
-        #       preprocessing...
-        #
-        # for depth in range(...):
-        #      minimax()
-        #   return nxtmv
-        #
-        #
-        #
-        #
-        #
-        #
-        #
-        #
-
-        
         except Exception as e:
             print 'Exception occurred ', e
             print 'Traceback printing ', sys.exc_info()
             print traceback.format_exc()
-
-
-    
-
