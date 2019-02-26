@@ -209,7 +209,7 @@ class Player8:
         else:
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
 
-    def idfs(self,board,oldmv,symbol,depth):
+    def idfs(self,board,oldmv,symbol,depth,player):
         """
         idfs,minmax,alpha beta pruning implemented
         """
@@ -219,8 +219,7 @@ class Player8:
             if(time()-self.start)>self.limit:
                 break
             output = self.alphabetamove(board,oldmv,player,depth)
-            finalMove=move
-		    # finalMove = move
+            finalMove=output
 		
         return finalMove
 
@@ -264,7 +263,7 @@ class Player8:
                 self.bonus_move_cur[player] = 0
             
             if status and (self.bonus_move_cur[player] == 1):
-                player_utility == self.prunealphabeta(board,depth - 1,player,moves,
+                player_utility = self.prunealphabeta(board,depth - 1,player,moves,
                                                         -self.inf,self.inf,player)
             else:
                 player_utility = self.prunealphabeta(board,depth-1,player^1,moves,
@@ -295,10 +294,11 @@ class Player8:
 
         moves_available = board.find_valid_move_cells(player_move)
         
-        #if player is maximizing :
-            #cur_utility = -self.inf
-        #else:
-            #cur_utility = self.inf
+        
+        if player == 1 :
+            cur_utility = -self.inf
+        else:
+            cur_utility = self.inf
 
         data = self.bonus_move_cur[player]
         
@@ -306,7 +306,7 @@ class Player8:
 
             self.bonus_move_cur[player] = data
             self.update_hashtable(moves,player)
-            gamepos,status = board.update(old_move,moves,player)
+            gamepos,status = board.update(player_move,moves,player)
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
@@ -334,7 +334,7 @@ class Player8:
             self.update_hashtable(moves,player)
             board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
             board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
-            if datetime.datetime.utcnow() - self.begin > self.limit:
+            if time() - self.start > self.limit:
                 break
             if(beta <= alpha):
                 break
@@ -371,7 +371,12 @@ class Player8:
             mvp = raw_input()
 
             tempboard=deepcopy(gameboard)
-            self.idfs(tempboard,oldmove,symbol,0)
+            if symbol=='x':
+                player=1
+            else:
+                player=0
+
+            self.idfs(tempboard,oldmove,symbol,0,player)
             print self.utility(tempboard,symbol)
 
             return cells[random.randrange(len(cells))]
