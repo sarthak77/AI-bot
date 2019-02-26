@@ -213,24 +213,13 @@ class Player8:
         """
         idfs,minmax,alpha beta pruning implemented
         """
-        #firstGuess = 0
-		#self.begin = datetime.datetime.utcnow()
-		maxDepth = 9*9
-
-		for depth in range(1, maxDepth + 1):
-			self.transpositionTable = {}
-			
-            if (time()-self.start) > self.limit:
-				break
-            
+        maxDepth=9*9
+        for depth in range(1,maxdepth+1):
+			self.transpositionTable={}
+            if(time()-self.start)>self.limit:
+                break
             output = self.alphabetamove(board,old_move,player,depth)
-			#firstGuess, move = self.mtdf(formattedBoard, formattedBlockStatus, root, firstGuess, depth, isPlayerBonus)
-			# if self.isTimeLeft() or firstGuess == "TIMEOUT":
-			# if time() - self.begin > self.limit
-			# 	break
 			finalMove = move
-
-		# print "defp4 depth: ", depth
 		return finalMove
 
         ######sarthak's function
