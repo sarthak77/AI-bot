@@ -384,7 +384,8 @@ if __name__ == '__main__':
 		# obj2 = Random_Player()
 
 	elif option == '2':
-		obj1 = Random_Player()
+		# obj1 = Random_Player()
+		obj1 = Player8()
 		obj2 = Manual_Player()
 	elif option == '3':
 		obj1 = Manual_Player()
