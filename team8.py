@@ -25,21 +25,21 @@ class Player8:
 
         self.bestmv=(0,0,0)
         self.initial_level = 2
-        self.endtime = 23
+        #self.endtime = 23
         self.inf = 100000000
-        self.starttime = 0
+        #self.starttime = 0
         self.max_player = 1
         self.map_symbol = ['o', 'x']
         self.zob_store = []
         self.hash_store = []
         self.bonus_move_cur = [0 , 0]
-        self.maxlen = 0
-        self.mindepth = 9
+        #self.maxlen = 0
+        #self.mindepth = 9
         self.last_blk_won = 0
         for i in range(3):
             self.hash_store.append([0]*3)
         self.numsteps = 0
-        for i in range(18):
+        for i in range(36):
             self.zob_store.append(2**i)
         self.dict = {}
 
@@ -214,17 +214,17 @@ class Player8:
         idfs,minmax,alpha beta pruning implemented
         """
         #firstGuess = 0
-		self.begin = datetime.datetime.utcnow()
-		maxDepth = 9 * 9
+		#self.begin = datetime.datetime.utcnow()
+		maxDepth = 9*9
 
 		for depth in range(1, maxDepth + 1):
 			self.transpositionTable = {}
-			if datetime.datetime.utcnow() - self.begin > self.limit:
+			if (datetime.datetime.utcnow()-self.start) > self.limit:
 				break
             output = self.alphabetamove(board,old_move,player,depth)
 			#firstGuess, move = self.mtdf(formattedBoard, formattedBlockStatus, root, firstGuess, depth, isPlayerBonus)
 			# if self.isTimeLeft() or firstGuess == "TIMEOUT":
-			if datetime.datetime.utcnow() - self.begin > self.limit
+			if time() - self.begin > self.limit
 				break
 			finalMove = move
 
