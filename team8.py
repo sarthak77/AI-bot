@@ -4,6 +4,7 @@ Class for AI bot
 import random
 import traceback
 import sys
+import numpy as np
 from time import time
 from copy import deepcopy
 
@@ -19,7 +20,7 @@ class Player8:
         self.default=(1,1,1)#default move
         self.limit=23#time limit
         self.start=0#start time
-        self.maxdepth=4
+        self.maxdepth=2
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)
@@ -28,12 +29,10 @@ class Player8:
         self.max_player = 1
         self.map_symbol = ['o', 'x']
         self.zob_store = []
-        self.hash_store = []
+        self.hash_store = np.zeros((2,18,18),np.int32)
         self.bonus_move_cur = [0 , 0]
         self.last_blk_won = 0
 
-        for i in range(3):
-            self.hash_store.append([0]*3)
 
         self.numsteps = 0
 
@@ -41,10 +40,13 @@ class Player8:
             self.zob_store.append(2**i)
         self.dict = {}
 
+
+
     def smallboardutility(self,board,symbol):
         """
         Find small board utility
         """
+
         for b in range(2):
 
             #r1 r2 r3 c1 c2 c3 d1 d2
@@ -84,6 +86,7 @@ class Player8:
         return(sum(utilityvector))
 
 
+
     def calculatewincomb(self,v,symbol):
         """
         Calculate status of each row,column,dig
@@ -101,6 +104,7 @@ class Player8:
             return .5
         if (symbol in v) and (opp in v):
             return 0 
+
 
 
     def blockutility(self,board,b,r,c,symbol):
@@ -144,6 +148,7 @@ class Player8:
         return(sum(utilityvector))
 
 
+
     def utility(self,board,symbol):
         """
         Heuristic function
@@ -157,23 +162,9 @@ class Player8:
 
         #calculating small board utility
         utility+=self.smallboardutility(board,symbol)
-
         return(utility)
 
 
-    def makemv(self,board,oldmv,mv,symbol):
-        """
-        Function to make move for state change
-        """
-        # board.print_board()
-        board.update(oldmv,mv,symbol)
-        # board.print_board()
-
-    def reverse(self,board,mv):
-        """
-        Function for reversing the move for backtracking
-        """
-        board.big_boards_status[mv[0]][mv[1]][mv[2]]="-"
 
     def initialise_hashtable(self , board):
         self.dict = {}
@@ -193,6 +184,8 @@ class Player8:
                     self.hash_store[m][i][j] = cur_hash
         #print self.hash_store
 
+
+
     def update_hashtable(self,move,player):
     	#print "Update function called"
     	#print self.hash_store
@@ -201,43 +194,39 @@ class Player8:
         col_no = move[2]/3
         x = 3*(move[1]%3) + (move[2]%3)
     
-
         if (player == self.max_player):        
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x]
         else:
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
 
     
-  
-
-    
             
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
         """
-        alpha beta algorithm recursive
+        minimax+alphabeta
         """
 
         if time() - self.start > self.limit:
-            return 1
-            ##return evaluated heuristic value
+            return self.utility(board,self.map_symbol[player])
+
         if board.find_terminal_state() != ('CONTINUE','-'):
-            return 1
-            ##return evaluated heuristic value
+            return self.utility(board,self.map_symbol[player])
 
         moves_available = board.find_valid_move_cells(player_move)
-        
         
         if player == 1 :
             cur_utility = -self.inf
         else:
             cur_utility = self.inf
 
-        data = self.bonus_move_cur[player]
+        tempbonusmove = self.bonus_move_cur[player]
         
         for moves in moves_available:
 
-            self.bonus_move_cur[player] = data
+            self.bonus_move_cur[player] = tempbonusmove
+
             self.update_hashtable(moves,player)
+            
             gamepos,status = board.update(player_move,moves,player)
             if status:
                 self.bonus_move_cur[player] ^= 1
@@ -261,64 +250,71 @@ class Player8:
                 else:
                     cur_utility = min(cur_utility,self.prunealphabeta(board,depth-1,
                                         player^1,moves,alpha,beta,player))
-                alpha = min(alpha,cur_utility)
+                beta = min(beta,cur_utility)
 
             self.update_hashtable(moves,player)
+
             board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
             board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
-            if time() - self.start > self.limit:
-                break
+            
             if(beta <= alpha):
                 break
+            if time() - self.start > self.limit:
+                break
         
-
-        self.bonus_move_cur[player] = data
+        self.bonus_move_cur[player] = tempbonusmove
         return cur_utility
 
 
 
     def alphabetamove(self,board,old_move,player,depth):
         """
-        Deciding best move
+        Preprocessing for alpha beta algorithm
         """
 
+        #find all possible moves
         self.nextmoves = board.find_valid_move_cells(old_move)
         
-        trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
+        # trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
         
+        #initialise maximum value
         curmax = -self.inf
-        
-        ###
-        
-        data = self.bonus_move_cur[player]
+
+        #tells if player has bonus move 
+        tempbonusmove = self.bonus_move_cur[player]
         
         for moves in self.nextmoves:
-            self.bonus_move_cur[player] = data
+
+            self.bonus_move_cur[player] = tempbonusmove
+
             self.update_hashtable(moves,player)
             
+            #checks if any cell won
             gamepos,status = board.update(old_move,moves,player)
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
                 self.bonus_move_cur[player] = 0
             
+            #check utility after winning 
             if status and (self.bonus_move_cur[player] == 1):
-                player_utility = self.prunealphabeta(board,depth - 1,player,moves,
-                                                        -self.inf,self.inf,player)
+                player_utility = self.prunealphabeta(board,depth - 1,player,moves,-self.inf,self.inf,player)#same player moves
             else:
-                player_utility = self.prunealphabeta(board,depth-1,player^1,moves,
-                                                        -self.inf,self.inf,player)
+                player_utility = self.prunealphabeta(board,depth-1,player^1,moves,-self.inf,self.inf,player)#opponent moves
             
             #restore the board states
             board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
             board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
+            
             self.update_hashtable(moves,player)
 
             if(player_utility > curmax):
                 cur_best_move = moves
                 curmax = player_utility
         
-        self.bonus_move_cur[player] = data
+        self.bonus_move_cur[player] = tempbonusmove
+        
+        return cur_best_move
 
 
 
@@ -326,6 +322,7 @@ class Player8:
         """
         idfs returns best move
         """
+
         for depth in range(1,self.maxdepth):
 
 			# self.transpositionTable={}
