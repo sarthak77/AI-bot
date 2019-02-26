@@ -189,6 +189,7 @@ class BigBoard:
 			#checking for horizontal pattern(i'th row)
 			if (bs[3*x+i][3*y] == bs[3*x+i][3*y+1] == bs[3*x+i][3*y+2]) and (bs[3*x+i][3*y] == ply):
 				self.small_boards_status[k][x][y] = ply
+				print "gcghcghcghch"
 				return 'SUCCESSFUL', True
 			#checking for vertical pattern(i'th column)
 			if (bs[3*x][3*y+i] == bs[3*x+1][3*y+i] == bs[3*x+2][3*y+i]) and (bs[3*x][3*y+i] == ply):

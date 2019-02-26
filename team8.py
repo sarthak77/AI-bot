@@ -219,46 +219,60 @@ class Player8:
 
 		for depth in range(1, maxDepth + 1):
 			self.transpositionTable = {}
-			if (datetime.datetime.utcnow()-self.start) > self.limit:
+			
+            if (time()-self.start) > self.limit:
 				break
+            
             output = self.alphabetamove(board,old_move,player,depth)
 			#firstGuess, move = self.mtdf(formattedBoard, formattedBlockStatus, root, firstGuess, depth, isPlayerBonus)
 			# if self.isTimeLeft() or firstGuess == "TIMEOUT":
-			if time() - self.begin > self.limit
-				break
+			# if time() - self.begin > self.limit
+			# 	break
 			finalMove = move
 
 		# print "defp4 depth: ", depth
 		return finalMove
 
-        if depth>self.maxdepth:
-            return
+        ######sarthak's function
+        # if depth>self.maxdepth:
+        #     return
 
-        cells = board.find_valid_move_cells(oldmv)
+        # cells = board.find_valid_move_cells(oldmv)
 
-        for mv in cells:
-            # print mv,depth
+        # for mv in cells:
+        #     # print mv,depth
 
-            self.makemv(board,oldmv,mv,symbol)
-            tempboard=deepcopy(board)
-            self.idfs(tempboard,mv,symbol,depth+1)
-            self.reverse(board,mv)
+        #     self.makemv(board,oldmv,mv,symbol)
+        #     tempboard=deepcopy(board)
+        #     self.idfs(tempboard,mv,symbol,depth+1)
+        #     self.reverse(board,mv)
 
     def alphabetamove(self,board,old_move,player,depth):
+        """
+        Deciding best move
+        """
+
         self.nextmoves = board.find_valid_move_cells(old_move)
+        
         trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
+        
         curmax = -self.inf
+        
         ###
+        
         data = self.bonus_move_cur[player]
+        
         for moves in self.nextmoves:
             self.bonus_move_cur[player] = data
             self.update_hashtable(moves,player)
+            
             gamepos,status = board.update(old_move,moves,player)
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
                 self.bonus_move_cur[player] = 0
-            if status and self.bonus_move_cur[player] == 1:
+            
+            if status and (self.bonus_move_cur[player] == 1):
                 player_utility == self.prunealphabeta(board,depth - 1,player,moves,
                                                         -self.inf,self.inf,player)
             else:
@@ -277,18 +291,24 @@ class Player8:
         self.bonus_move_cur[player] = data
             
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
-        if datetime.datetime.utcnow() - self.begin > self.limit:
+        """
+        alpha beta algorithm recursive
+        """
+
+        if time() - self.start > self.limit:
             ##return evaluated heuristic value
         if board.find_terminal_state() != ('CONTINUE','-'):
             ##return evaluated heuristic value
 
-        moves_available = board.find_valid_move_cells(board,prev,player_move)
+        moves_available = board.find_valid_move_cells(player_move)
         
         #if player is maximizing :
             #cur_utility = -self.inf
         #else:
             #cur_utility = self.inf
+
         data = self.bonus_move_cur[player]
+        
         for moves in moves_available:
             self.bonus_move_cur[player] = data
             self.update_hashtable(moves,player)
