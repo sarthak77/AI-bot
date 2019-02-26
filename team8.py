@@ -18,27 +18,23 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-        self.limit=24#time limit
+        self.limit=23.5#time limit
         self.start=0#start time
         self.maxdepth=2
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)
         self.inf = 100000000
-
         self.max_player = 1
         self.map_symbol = ['o', 'x']
         self.zob_store = []
         self.hash_store = np.zeros((2,18,18),np.int32)
         self.bonus_move_cur = [0 , 0]
         self.last_blk_won = 0
-
-
         self.numsteps = 0
-
+        self.dict = {}
         for i in range(36):
             self.zob_store.append(2**i)
-        self.dict = {}
 
 
 
@@ -358,13 +354,6 @@ class Player8:
             #start timer
             self.start=time()
 
-###################################################################
-            # print "oldmove::"
-            # print oldmove
-            # cells = gameboard.find_valid_move_cells(oldmove)
-            # print cells
-###################################################################
-
             #calcuolate from hash tables
             depth=1
 
@@ -377,9 +366,6 @@ class Player8:
                 self.last_blk_won^=1
             else:
                 self.last_blk_won=0
-
-            # tempboard.big_boards_status[tempmove[0]][tempmove[1]][tempmove[2]] = "-"
-            # tempboard.small_boards_status[tempmove[0]][tempmove[1]/3][tempmove[2]/3] = "-"
 
             print time()-self.start
             return tempmove

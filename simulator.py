@@ -45,6 +45,8 @@ class Manual_Player:
 		pass
 	def move(self, board, old_move, flag):
 		print 'Enter your move: <format:board row column> (you\'re playing with', flag + ")"	
+		print "old_move->"
+		print old_move
 		mvp = raw_input()
 		mvp = mvp.split()
 		cells = board.find_valid_move_cells(old_move)
