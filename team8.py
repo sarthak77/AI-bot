@@ -213,14 +213,16 @@ class Player8:
         """
         idfs,minmax,alpha beta pruning implemented
         """
-        maxDepth=9*9
+        maxdepth=9*9
         for depth in range(1,maxdepth+1):
-			self.transpositionTable={}
+			# self.transpositionTable={}
             if(time()-self.start)>self.limit:
                 break
-            output = self.alphabetamove(board,old_move,player,depth)
-			finalMove = move
-		return finalMove
+            output = self.alphabetamove(board,oldmv,player,depth)
+            finalMove=move
+		    # finalMove = move
+		
+        return finalMove
 
         ######sarthak's function
         # if depth>self.maxdepth:
@@ -285,8 +287,10 @@ class Player8:
         """
 
         if time() - self.start > self.limit:
+            return 1
             ##return evaluated heuristic value
         if board.find_terminal_state() != ('CONTINUE','-'):
+            return 1
             ##return evaluated heuristic value
 
         moves_available = board.find_valid_move_cells(player_move)
@@ -299,6 +303,7 @@ class Player8:
         data = self.bonus_move_cur[player]
         
         for moves in moves_available:
+
             self.bonus_move_cur[player] = data
             self.update_hashtable(moves,player)
             gamepos,status = board.update(old_move,moves,player)
@@ -307,7 +312,7 @@ class Player8:
             else:
                 self.bonus_move_cur[player] = 0
             
-            if player = self.max_player:
+            if player == self.max_player:
                 if status and self.bonus_move_cur[player] == 1:
                     cur_utility = max(cur_utility,self.prunealphabeta(board,depth-1,
                                         player,moves,alpha,beta,player))
