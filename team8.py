@@ -18,11 +18,8 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-<<<<<<< Updated upstream
         self.limit=23#time limit
-=======
         self.limit=500#time limit
->>>>>>> Stashed changes
         self.start=0#start time
         self.maxdepth=9*9*9
         self.player=0#x=1 o=0
@@ -240,7 +237,7 @@ class Player8:
 
             self.update_hashtable(moves,player)
             
-            gamepos,status = board.update(player_move,moves,player)
+            gamepos,status = board.update(player_move,moves,self.map_symbol[player])
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
@@ -307,7 +304,7 @@ class Player8:
             self.update_hashtable(moves,player)
             
             #checks if any cell won
-            gamepos,status = board.update(old_move,moves,player)
+            gamepos,status = board.update(old_move,moves,self.map_symbol[player])
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
