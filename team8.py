@@ -241,8 +241,6 @@ class Player8:
                     self.hash_store[m][i][j] = cur_hash
         #print self.hash_store
 
-
-
     def update_hashtable(self,move,player):
     	#print "Update function called"
     	#print self.hash_store
@@ -257,6 +255,7 @@ class Player8:
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
 
     
+    
             
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
         """
@@ -266,12 +265,12 @@ class Player8:
         if time() - self.start > self.limit:
             return self.utility(board,self.map_symbol[player])
 
-        if board.find_terminal_state() != ('CONTINUE','-'):
+        if board.find_terminal_state() != ('CONTINUE','-') or depth == 0:
             return self.utility(board,self.map_symbol[player])
 
         moves_available = board.find_valid_move_cells(player_move)
         
-        if player == 1 :
+        if player == self.max_player :
             cur_utility = -self.inf
         else:
             cur_utility = self.inf
@@ -332,7 +331,7 @@ class Player8:
         #find all possible moves
         self.nextmoves = board.find_valid_move_cells(old_move)
         
-        # trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
+        cur_best_move = self.nextmoves[random.randrange(len(self.nextmoves))]
         
         #initialise maximum value
         curmax = -self.inf
@@ -372,10 +371,9 @@ class Player8:
         self.bonus_move_cur[player] = tempbonusmove
         
         return cur_best_move
+   
 
-
-
-    def idfs(self,board,oldmv,depth,player):
+    def idfs(self,board,oldmv,tree_level,player):
         """
         idfs returns best move
         """
@@ -389,7 +387,7 @@ class Player8:
             output = self.alphabetamove(board,oldmv,player,depth)
 		
         return output
-
+   
 
 
     def move(self,gameboard,oldmove,symbol):
