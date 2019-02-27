@@ -18,7 +18,7 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-        self.limit=23.5#time limit
+        self.limit=5#time limit
         self.start=0#start time
         self.maxdepth=2
         self.player=0#x=1 o=0
@@ -54,7 +54,7 @@ class Player8:
                 row.append(board.small_boards_status[b][i][0])
                 row.append(board.small_boards_status[b][i][1])
                 row.append(board.small_boards_status[b][i][2])
-                utilityvector.append(self.calculatewincomb(row,symbol))
+                utilityvector.append(self.calculatewincomb(row,symbol,0))
 
             #check c1 c2 c3
             for i in range(3):
@@ -62,46 +62,50 @@ class Player8:
                 col.append(board.small_boards_status[b][0][i])
                 col.append(board.small_boards_status[b][1][i])
                 col.append(board.small_boards_status[b][2][i])
-                utilityvector.append(self.calculatewincomb(col,symbol))
+                utilityvector.append(self.calculatewincomb(col,symbol,0))
 
             #check dig1
             dig=[]
             dig.append(board.small_boards_status[b][0][0])
             dig.append(board.small_boards_status[b][1][1])
             dig.append(board.small_boards_status[b][2][2])
-            utilityvector.append(self.calculatewincomb(dig,symbol))
+            utilityvector.append(self.calculatewincomb(dig,symbol,0))
 
             #check dig2
             dig=[]
             dig.append(board.small_boards_status[b][0][2])
             dig.append(board.small_boards_status[b][1][1])
             dig.append(board.small_boards_status[b][2][0])
-            utilityvector.append(self.calculatewincomb(dig,symbol))
+            utilityvector.append(self.calculatewincomb(dig,symbol,0))
 
         #modify later
         return(sum(utilityvector))
 
 
 
-    def calculatewincomb(self,v,symbol):
+    def calculatewincomb(self,v,symbol,flag):
         """
         Calculate status of each row,column,dig
         """
+
         if symbol=='x':
             opp='o'
         else:
             opp='x'
 
-        if (symbol in v) and (opp not in v):
-            return 1
-        if (opp in v) and (symbol not in v):
-            return -1
-        if ('-' in v) and (symbol not in v) and (opp not in v):
-            return .5
-        if (symbol in v) and (opp in v):
-            return 0 
-
-        return 0
+        #flag=1 for big board and 0 for small board
+        if flag:
+            if (symbol in v) and (opp not in v):
+                return 1
+            if (opp in v) and (symbol not in v):
+                return -1
+            if ('-' in v) and (symbol not in v) and (opp not in v):
+                return .5
+            if (symbol in v) and (opp in v):
+                return 0 
+        else:
+            #for small board it might return d for draw
+            return 0
 
 
 
@@ -118,7 +122,7 @@ class Player8:
             row.append(board.big_boards_status[b][r+i][c])
             row.append(board.big_boards_status[b][r+i][c+1])
             row.append(board.big_boards_status[b][r+i][c+2])
-            utilityvector.append(self.calculatewincomb(row,symbol))
+            utilityvector.append(self.calculatewincomb(row,symbol,1))
 
 
         #check c1 c2 c3
@@ -127,21 +131,21 @@ class Player8:
             col.append(board.big_boards_status[b][r][c+i])
             col.append(board.big_boards_status[b][r+1][c+i])
             col.append(board.big_boards_status[b][r+2][c+i])
-            utilityvector.append(self.calculatewincomb(col,symbol))
+            utilityvector.append(self.calculatewincomb(col,symbol,1))
 
         #check dig1
         dig=[]
         dig.append(board.big_boards_status[b][r][c])
         dig.append(board.big_boards_status[b][r+1][c+1])
         dig.append(board.big_boards_status[b][r+2][c+2])
-        utilityvector.append(self.calculatewincomb(dig,symbol))
+        utilityvector.append(self.calculatewincomb(dig,symbol,1))
 
         #check dig2
         dig=[]
         dig.append(board.big_boards_status[b][r][c+2])
         dig.append(board.big_boards_status[b][r+1][c+1])
         dig.append(board.big_boards_status[b][r+2][c])
-        utilityvector.append(self.calculatewincomb(dig,symbol))
+        utilityvector.append(self.calculatewincomb(dig,symbol,1))
 
         return(sum(utilityvector))
 
@@ -160,6 +164,7 @@ class Player8:
 
         #calculating small board utility
         utility+=self.smallboardutility(board,symbol)
+
         return(utility)
 
 
@@ -225,7 +230,7 @@ class Player8:
 
             self.update_hashtable(moves,player)
             
-            gamepos,status = board.update(player_move,moves,player)
+            gamepos,status = board.update(player_move,moves,self.map_symbol[player])
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
@@ -288,7 +293,7 @@ class Player8:
             self.update_hashtable(moves,player)
             
             #checks if any cell won
-            gamepos,status = board.update(old_move,moves,player)
+            gamepos,status = board.update(old_move,moves,self.map_symbol[player])
             if status:
                 self.bonus_move_cur[player] ^= 1
             else:
