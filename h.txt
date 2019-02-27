@@ -1,0 +1,7 @@
+Now care must be taken to tackle the cases where you can win by more number of blocks.
+To handle such cases we need to add some utility to our heuristic
+Let this utility be Y
+We made a hit and trial for evaluating Y by playing with previous versions of our bot and with
+other bots.
+We gave Y different values when we move first and when we move second since you need to
+play safe when you play second..

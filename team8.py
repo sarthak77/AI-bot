@@ -241,8 +241,6 @@ class Player8:
                     self.hash_store[m][i][j] = cur_hash
         #print self.hash_store
 
-
-
     def update_hashtable(self,move,player):
     	#print "Update function called"
     	#print self.hash_store
@@ -257,6 +255,7 @@ class Player8:
             self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
 
     
+    
             
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
         """
@@ -264,8 +263,6 @@ class Player8:
         """
 
         if time() - self.start > self.limit:
-         
-
             return self.utility(board,self.map_symbol[player])
 
         if board.find_terminal_state() != ('CONTINUE','-') or depth == 0:
@@ -374,8 +371,7 @@ class Player8:
         self.bonus_move_cur[player] = tempbonusmove
         
         return cur_best_move
-
-
+   
 
     def idfs(self,board,oldmv,tree_level,player):
         """
@@ -391,7 +387,7 @@ class Player8:
             output = self.alphabetamove(board,oldmv,player,depth)
 		
         return output
-
+   
 
 
     def move(self,gameboard,oldmove,symbol):
@@ -402,10 +398,8 @@ class Player8:
         #initialising players
         if symbol=='x':
             self.player=1
-            self.max_player = 1
             self.opponent=0
         else:
-            self.max_player = 0
             self.player=0
             self.opponent=1
 
@@ -420,10 +414,6 @@ class Player8:
             #calcuolate from hash tables
             depth=1
 
-            #calcuolate from hash tables
-            depth=2
-            if(self.last_blk_won):
-                self.bonus_move_cur[self.max_player] = 1
             tempboard=deepcopy(gameboard)
             tempmove=self.idfs(tempboard,oldmove,depth,self.player)
 
