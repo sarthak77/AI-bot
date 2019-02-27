@@ -18,9 +18,9 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-        self.limit=24#time limit
+        self.limit=23.5#time limit
         self.start=0#start time
-        self.maxdepth=5
+        self.maxdepth=9*9*9
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)

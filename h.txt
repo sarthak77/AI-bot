@@ -5,3 +5,20 @@ We made a hit and trial for evaluating Y by playing with previous versions of ou
 other bots.
 We gave Y different values when we move first and when we move second since you need to
 play safe when you play second..
+
+Bonus move is also considered. Whenever during search, if bot wins a block, if it is at
+a max node, it consider its child node also as max nodes instead of min nodes.
+Similarly, if bot wins a block at a min node, it consider its child nodes as a min nodes
+instead of max nodes.
+
+
+Optimize
+
+mtftd
+hashing
+
+Try except everywhere
+
+Improve heuristic
+
+block weight vector
