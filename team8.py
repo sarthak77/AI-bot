@@ -45,7 +45,6 @@ class Player8:
         self.dict = {}
 
 
-
     def smallboardutility(self,board,symbol):
         """
         Find small board utility
@@ -62,7 +61,7 @@ class Player8:
                 row.append(board.small_boards_status[b][i][0])
                 row.append(board.small_boards_status[b][i][1])
                 row.append(board.small_boards_status[b][i][2])
-                utilityvector.append(self.calculatewincomb(row,symbol))
+                utilityvector.append(self.calculatewincombsb(row,symbol))
 
             #check c1 c2 c3
             for i in range(3):
@@ -70,21 +69,21 @@ class Player8:
                 col.append(board.small_boards_status[b][0][i])
                 col.append(board.small_boards_status[b][1][i])
                 col.append(board.small_boards_status[b][2][i])
-                utilityvector.append(self.calculatewincomb(col,symbol))
+                utilityvector.append(self.calculatewincombsb(col,symbol))
 
             #check dig1
             dig=[]
             dig.append(board.small_boards_status[b][0][0])
             dig.append(board.small_boards_status[b][1][1])
             dig.append(board.small_boards_status[b][2][2])
-            utilityvector.append(self.calculatewincomb(dig,symbol))
+            utilityvector.append(self.calculatewincombsb(dig,symbol))
 
             #check dig2
             dig=[]
             dig.append(board.small_boards_status[b][0][2])
             dig.append(board.small_boards_status[b][1][1])
             dig.append(board.small_boards_status[b][2][0])
-            utilityvector.append(self.calculatewincomb(dig,symbol))
+            utilityvector.append(self.calculatewincombsb(dig,symbol))
 
         #modify later
         return(sum(utilityvector))
@@ -95,19 +94,73 @@ class Player8:
         """
         Calculate status of each row,column,dig
         """
+
+        utility=0
+
         if symbol=='x':
             opp='o'
         else:
             opp='x'
 
+        #checking edge cases
+        if v.count(symbol)==2 and v.count('-')==1:
+            utility+=10
+        elif v.count(symbol)==3:
+            utility+=100
+        elif v.count(opp)==2 and v.count('-')==1:
+            utility-=10
+        elif v.count(opp)==3:
+            utility-=100
+
+       #checking normal cases
         if (symbol in v) and (opp not in v):
-            return 1
-        if (opp in v) and (symbol not in v):
-            return -1
-        if ('-' in v) and (symbol not in v) and (opp not in v):
-            return .5
-        if (symbol in v) and (opp in v):
-            return 0 
+            utility+=1
+        elif (opp in v) and (symbol not in v):
+            utility+=-1
+        elif ('-' in v) and (symbol not in v) and (opp not in v):
+            utility+=.5
+        elif (symbol in v) and (opp in v):
+            utility+=0 
+           
+        return utility
+
+
+
+    def calculatewincombsb(self,v,symbol):
+        """
+        Calculate status of each row,column,dig
+        """
+
+        utility=0
+
+        if symbol=='x':
+            opp='o'
+        else:
+            opp='x'
+
+        #checking edge case
+        if v.count(symbol)==2 and v.count('-')==1:
+            utility+=10
+        elif v.count(symbol)==3:
+            utility+=100
+        elif v.count(opp)==2 and v.count('-')==1:
+            utility-=10
+        elif v.count(opp)==3:
+            utility-=100
+
+        #checking normal cases
+        if 'd' in v:
+            utility+=0 
+        elif ((symbol in v) and (opp in v)):
+            utility+=0 
+        elif (symbol in v) and (opp not in v):
+            utility+=1
+        elif (opp in v) and (symbol not in v):
+            utility+=-1
+        elif ('-' in v) and (symbol not in v) and (opp not in v):
+            utility+=.5            
+           
+        return utility
 
 
 
@@ -115,6 +168,7 @@ class Player8:
         """
         Calculate utility of each cell of big board
         """
+
         #r1 r2 r3 c1 c2 c3 d1 d2
         utilityvector=[]
 
@@ -125,7 +179,6 @@ class Player8:
             row.append(board.big_boards_status[b][r+i][c+1])
             row.append(board.big_boards_status[b][r+i][c+2])
             utilityvector.append(self.calculatewincomb(row,symbol))
-
 
         #check c1 c2 c3
         for i in range(3):
@@ -157,17 +210,22 @@ class Player8:
         """
         Heuristic function
         """
-        #print "**********TESTS******"
-        #board.print_board()
         utility=0
+
+##################TESTING##################################
+        # board.print_board()
+        # a=raw_input()
+########TESTING############################################
+        
+        #calculating small board utility and weights of each block
+        utility+=self.smallboardutility(board,symbol)
+        
         #calculating big board utility 
         for i in range(2):
             for j in range(3):
                 for k in range(3):
                     utility+=self.blockutility(board,i,3*j,k*3,symbol)
 
-        #calculating small board utility
-        utility+=self.smallboardutility(board,symbol)
         return(utility)
 
 
