@@ -390,8 +390,8 @@ if __name__ == '__main__':
 		obj1 = Player8()
 		obj2 = Manual_Player()
 	elif option == '3':
-		obj1 = Manual_Player()
-		obj2 = Manual_Player()
+		obj1 = Player8()
+		obj2 = Player8()
 	else:
 		print 'Invalid option'
 		sys.exit(1)

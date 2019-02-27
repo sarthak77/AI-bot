@@ -20,7 +20,7 @@ class Player8:
         self.default=(1,1,1)#default move
         self.limit=24#time limit
         self.start=0#start time
-        self.maxdepth=2
+        self.maxdepth=5
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)
@@ -204,11 +204,6 @@ class Player8:
         Heuristic function
         """
         utility=0
-
-##################TESTING##################################
-        # board.print_board()
-        # a=raw_input()
-########TESTING############################################
         
         #calculating small board utility and weights of each block
         utility+=self.smallboardutility(board,symbol)
@@ -218,6 +213,14 @@ class Player8:
             for j in range(3):
                 for k in range(3):
                     utility+=self.blockutility(board,i,3*j,k*3,symbol)
+
+################TESTING##################################
+        # print "###############board vs utility####################33"
+        # board.print_board()
+        # print utility
+        # print "###############board vs utility####################33"
+        # a=raw_input()
+######TESTING############################################
 
         return(utility)
 
@@ -263,10 +266,10 @@ class Player8:
         """
 
         if time() - self.start > self.limit:
-            return self.utility(board,self.map_symbol[player])
+            return self.utility(board,self.map_symbol[self.player])
 
         if board.find_terminal_state() != ('CONTINUE','-') or depth == 0:
-            return self.utility(board,self.map_symbol[player])
+            return self.utility(board,self.map_symbol[self.player])
 
         moves_available = board.find_valid_move_cells(player_move)
         
@@ -331,8 +334,6 @@ class Player8:
         #find all possible moves
         self.nextmoves = board.find_valid_move_cells(old_move)
         
-        cur_best_move = self.nextmoves[random.randrange(len(self.nextmoves))]
-        
         #initialise maximum value
         curmax = -self.inf
 
@@ -364,6 +365,13 @@ class Player8:
             
             self.update_hashtable(moves,player)
 
+##################################testing#################################
+            # print "############utility test###############33"
+            # print player_utility
+            # print curmax
+            # print "############utility test###############33"
+            # a=raw_input()
+##################################testing#################################
             if(player_utility > curmax):
                 cur_best_move = moves
                 curmax = player_utility
@@ -381,7 +389,14 @@ class Player8:
         for depth in range(1,self.maxdepth):
 
 			# self.transpositionTable={}
-            
+
+###########################testing###########################
+            # print "######depth test#########"
+            # print depth
+            # print "######depth test#########"
+            # a=raw_input()
+###########################testing###########################
+
             if(time()-self.start)>self.limit:
                 break
             output = self.alphabetamove(board,oldmv,player,depth)
@@ -411,7 +426,7 @@ class Player8:
             #start timer
             self.start=time()
 
-            #calcuolate from hash tables
+            #calculate from hash tables
             depth=1
 
             tempboard=deepcopy(gameboard)
@@ -423,6 +438,11 @@ class Player8:
                 self.last_blk_won^=1
             else:
                 self.last_blk_won=0
+
+            #restore the board states
+            tempboard.big_boards_status[tempmove[0]][tempmove[1]][tempmove[2]] = "-"
+            tempboard.small_boards_status[tempmove[0]][tempmove[1]/3][tempmove[2]/3] = "-"
+
 
             print time()-self.start
             return tempmove
