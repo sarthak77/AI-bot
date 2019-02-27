@@ -18,9 +18,13 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
+<<<<<<< Updated upstream
         self.limit=23#time limit
+=======
+        self.limit=500#time limit
+>>>>>>> Stashed changes
         self.start=0#start time
-        self.maxdepth=2
+        self.maxdepth=9*9*9
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)
@@ -153,6 +157,8 @@ class Player8:
         """
         Heuristic function
         """
+        #print "**********TESTS******"
+        #board.print_board()
         utility=0
         #calculating big board utility 
         for i in range(2):
@@ -206,15 +212,22 @@ class Player8:
         minimax+alphabeta
         """
 
+        print "*****ingoing******"
+        print board.print_board()
+        tt=raw_input()
+        print "*****ingoing******"
+
         if time() - self.start > self.limit:
+         
+
             return self.utility(board,self.map_symbol[player])
 
-        if board.find_terminal_state() != ('CONTINUE','-'):
+        if board.find_terminal_state() != ('CONTINUE','-') or depth == 0:
             return self.utility(board,self.map_symbol[player])
 
         moves_available = board.find_valid_move_cells(player_move)
         
-        if player == 1 :
+        if player == self.max_player :
             cur_utility = -self.inf
         else:
             cur_utility = self.inf
@@ -275,15 +288,19 @@ class Player8:
         #find all possible moves
         self.nextmoves = board.find_valid_move_cells(old_move)
         
-        # trymove = self.nextmoves[random.randrange(len(self.nextmoves))]
+        cur_best_move = self.nextmoves[random.randrange(len(self.nextmoves))]
         
         #initialise maximum value
         curmax = -self.inf
 
         #tells if player has bonus move 
         tempbonusmove = self.bonus_move_cur[player]
+
+        print self.nextmoves
         
         for moves in self.nextmoves:
+
+            print moves
 
             self.bonus_move_cur[player] = tempbonusmove
 
@@ -318,7 +335,7 @@ class Player8:
 
 
 
-    def idfs(self,board,oldmv,depth,player):
+    def idfs(self,board,oldmv,tree_level,player):
         """
         idfs returns best move
         """
@@ -343,8 +360,10 @@ class Player8:
         #initialising players
         if symbol=='x':
             self.player=1
+            self.max_player = 1
             self.opponent=0
         else:
+            self.max_player = 0
             self.player=0
             self.opponent=1
 
@@ -364,8 +383,9 @@ class Player8:
 ###################################################################
 
             #calcuolate from hash tables
-            depth=1
-
+            depth=2
+            if(self.last_blk_won):
+                self.bonus_move_cur[self.max_player] = 1
             tempboard=deepcopy(gameboard)
             tempmove=self.idfs(tempboard,oldmove,depth,self.player)
 
