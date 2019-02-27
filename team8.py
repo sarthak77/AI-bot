@@ -18,8 +18,7 @@ class Player8:
         Initialize variables
         """
         self.default=(1,1,1)#default move
-        self.limit=23#time limit
-        self.limit=500#time limit
+        self.limit=5#time limit
         self.start=0#start time
         self.maxdepth=9*9*9
         self.player=0#x=1 o=0
@@ -267,11 +266,6 @@ class Player8:
         minimax+alphabeta
         """
 
-        print "*****ingoing******"
-        print board.print_board()
-        tt=raw_input()
-        print "*****ingoing******"
-
         if time() - self.start > self.limit:
          
 
@@ -351,11 +345,8 @@ class Player8:
         #tells if player has bonus move 
         tempbonusmove = self.bonus_move_cur[player]
 
-        print self.nextmoves
         
         for moves in self.nextmoves:
-
-            print moves
 
             self.bonus_move_cur[player] = tempbonusmove
 
@@ -444,7 +435,7 @@ class Player8:
             tempboard=deepcopy(gameboard)
             tempmove=self.idfs(tempboard,oldmove,depth,self.player)
 
-            status,blk_won=tempboard.update(tempboard,oldmove,tempmove,self.map_symbol[self.player])
+            status,blk_won=tempboard.update(oldmove,tempmove,self.map_symbol[self.player])
 
             if blk_won:
                 self.last_blk_won^=1
