@@ -400,13 +400,15 @@ class Player8:
         """
         Main code
         """
-
+        self.start=time()
         #initialising players
         if symbol=='x':
             self.player=1
+            self.max_player = 1
             self.opponent=0
         else:
             self.player=0
+            self.max_player = 0
             self.opponent=1
 
         try:
@@ -415,17 +417,19 @@ class Player8:
                 return self.default
             
             #start timer
-            self.start=time()
 
             #calcuolate from hash tables
             depth=1
 
             tempboard=deepcopy(gameboard)
+            self.bonus_move_cur = [0,0]
+            if self.last_blk_won == True:
+                self.bonus_move_cur[self.player] = 1
             tempmove=self.idfs(tempboard,oldmove,depth,self.player)
 
-            status,blk_won=tempboard.update(oldmove,tempmove,self.map_symbol[self.player])
+            gamepos,status=tempboard.update(oldmove,tempmove,self.map_symbol[self.player])
 
-            if blk_won:
+            if status:
                 self.last_blk_won^=1
             else:
                 self.last_blk_won=0
