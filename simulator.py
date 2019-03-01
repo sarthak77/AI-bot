@@ -18,6 +18,8 @@ import copy
 import traceback
 
 from team8 import Player8
+from temp import Player_final
+# from bot import Bot
 
 # TIME = 24
 TIME = 100000
@@ -387,11 +389,13 @@ if __name__ == '__main__':
 
 	elif option == '2':
 		# obj1 = Random_Player()
-		obj1 = Player8()
-		obj2 = Manual_Player()
+		obj2 = Player8()
+		obj1 = Manual_Player()
 	elif option == '3':
 		obj1 = Player8()
-		obj2 = Player8()
+		# obj2 = Player8()
+		# obj2 = Bot()
+		obj2 = Player_final()
 	else:
 		print 'Invalid option'
 		sys.exit(1)

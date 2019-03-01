@@ -13,7 +13,6 @@ instead of max nodes.
 
 
 Optimize
-
 mtftd
 hashing
 
@@ -21,4 +20,4 @@ Try except everywhere
 
 Improve heuristic
 
-block weight vector
+blocking
