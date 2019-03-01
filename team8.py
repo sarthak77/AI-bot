@@ -29,7 +29,7 @@ class Player8:
         self.max_player = 1
         self.map_symbol = ['o', 'x']
         self.zob_store = []
-        self.hash_store = np.zeros((2,18,18),np.int32)
+        self.hash_store = [[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]]
         self.bonus_move_cur = [0 , 0]
         self.last_blk_won = 0
         self.numsteps = 0
@@ -297,41 +297,46 @@ class Player8:
         return(utility)
 
 
-
     def initialise_hashtable(self , board):
         self.dict = {}
         for m in range(2):
             for i in range(3):
                 for j in range(3):
-                    cur_hash =0
-                    cnt = 0
+                    hash_value =0
+                    if(m == 0):
+                        hash_variable = 0
+                    else:
+                        hash_variable = 8
                     for k in range(3):
                         for l in range(3):
                             x = board.big_boards_status[m][3*i+k][3*j+l]
                             if (x == self.map_symbol[self.max_player]):
-                                cur_hash ^= self.zob_store[2*cnt]
+                                hash_value ^= self.zob_store[2*hash_variable]
                             elif (x == self.map_symbol[(self.max_player)^1]):
-                                cur_hash ^= self.zob_store[2*cnt+1]
-                            cnt +=1
-                    self.hash_store[m][i][j] = cur_hash
+                                hash_value ^= self.zob_store[2*hash_variable+1]
+                            hash_variable +=1
+                    self.hash_store[m][i][j] = hash_value
         #print self.hash_store
+
+
 
     def update_hashtable(self,move,player):
     	#print "Update function called"
     	#print self.hash_store
-        board_no = move[0]
-        row_no = move[1]/3
-        col_no = move[2]/3
-        x = 3*(move[1]%3) + (move[2]%3)
-    
-        if (player == self.max_player):        
-            self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x]
+        board_num = move[0]
+        row_num = move[1]/3
+        col_num = move[2]/3
+        if(board_num == 0):
+            hash_var = 3*(move[1]%3) + (move[2]%3)
         else:
-            self.hash_store[board_no][row_no][col_no] ^= self.zob_store[2*x+1]
-
+            hash_var = 3*(move[1]%3) + (move[2]%3)+8
+        if (player == self.max_player):        
+            self.hash_store[board_num][row_num][col_num] ^= self.zob_store[2*hash_var]
+        else:
+            self.hash_store[board_num][row_num][col_num] ^= self.zob_store[2*hash_var+1]
     
     
-            
+        
     def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
         """
         minimax+alphabeta
@@ -503,6 +508,9 @@ class Player8:
         """
         Main code
         """
+    
+        #start timer
+        self.start=time()
 
         #initialising players
         if symbol=='x':
@@ -518,9 +526,7 @@ class Player8:
             #if first move
             if oldmove == (-1,-1,-1):
                 return self.default
-            
-            #start timer
-            self.start=time()
+        
 
             #calculate from hash tables
             depth=1
