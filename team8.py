@@ -18,7 +18,7 @@ class Player8:
         Initialize variables
         """
         self.default=(0,4,4)#default move
-        self.limit=6#time limit
+        self.limit=60000000#time limit
         self.start=0#start time
         self.maxdepth=3
         # self.maxdepth=9*9*9
@@ -283,13 +283,16 @@ class Player8:
             # utility=-utility
         
 
-############TESTING##################################
-        # print "###############board vs utility####################33"
-        # board.print_board()
-        # print utility
-        # print "###############board vs utility####################33"
-        # a=raw_input()
-##TESTING############################################
+#########TESTING##################################
+        print "###############board vs utility####################33"
+        board.print_board()
+        print utility
+        print "###############board vs utility####################33"
+        print
+        print
+        print
+        a=raw_input()
+##################TESTING############################################
 
         return(utility)
 
@@ -334,6 +337,7 @@ class Player8:
         minimax+alphabeta
         """
 
+##########################testing#################################
         # print "#############testing###################33"
         # print "self_player"
         # print self.player
@@ -341,6 +345,7 @@ class Player8:
         # print prev
         # a=raw_input()
         # print "#############testing###################33"
+##########################testing#################################
 
         if time() - self.start > self.limit:
             return self.utility(board,self.map_symbol[prev])
@@ -442,23 +447,31 @@ class Player8:
             
             self.update_hashtable(moves,player)
 
-##############################testing#################################
-            # print "############utility test###############33"
-            # print player_utility
-            # print curmax
-            # print "############utility test###############33"
-            # a=raw_input()
-##############################testing#################################
-            if(player_utility > curmax):
+
+            if player_utility > curmax and player==self.max_player:
                 cur_best_move = moves
                 curmax = player_utility
+           
+
+
+###########################testing#################################
+            print "############curmax test###############33"
+            print player_utility
+            print "curmax is below"
+            print curmax
+            print "############curmax test###############33"
+            a=raw_input()
+###########################testing#################################
         
         self.bonus_move_cur[player] = tempbonusmove
         
-        # print "############################"
+##########################testing#################################
+        # print "##########final utility##################"
         # print curmax
         # a=raw_input()
-        # print "############################"
+        # print "##########final utility##################"
+##########################testing#################################
+
         return cur_best_move
    
 
@@ -471,12 +484,12 @@ class Player8:
 
 			# self.transpositionTable={}
 
-#######################testing###########################
+#####################testing###########################
             # print "######depth test#########"
             # print depth
             # print "######depth test#########"
             # a=raw_input()
-#######################testing###########################
+#####################testing###########################
 
             if(time()-self.start)>self.limit:
                 break
