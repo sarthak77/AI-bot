@@ -393,9 +393,9 @@ if __name__ == '__main__':
 		obj1 = Manual_Player()
 	elif option == '3':
 		# obj1 = Player8()
-		obj1 = Player8()
+		obj2 = Player8()
 		# obj2 = Bot()
-		obj2 = Player_final()
+		obj1 = Player_final()
 	else:
 		print 'Invalid option'
 		sys.exit(1)
