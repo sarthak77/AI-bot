@@ -8,253 +8,209 @@ import numpy as np
 from time import time
 from copy import deepcopy
 
-class Player8:
+class Team8:
     """ 
     AI implemented 
-    """
-    
+    """  
     def __init__(self):
         """
         Initialize variables
         """
         self.default=(0,4,4)#default move
-        self.limit=6#time limit
+        self.limit=20#time limit
         self.start=0#start time
-        # self.maxdepth=3
-        self.maxdepth=9*9*9
         self.player=0#x=1 o=0
         self.opponent=0
         self.bestmv=(0,0,0)
-        self.inf = 10000000000
-        self.max_player = 1
-        self.map_symbol = ['o', 'x']
-        self.zob_store = []
-        self.hash_store = [[[0,0,0],[0,0,0],[0,0,0]],[[0,0,0],[0,0,0],[0,0,0]]]
+        self.inf = 1000
+        self.bot_player = 1
+        self.startdepth=1
+        self.movecounter = 0
+        self.maxdepth=9*9*9
         self.bonus_move_cur = [0 , 0]
-        self.last_blk_won = 0
+        self.last_function_call = 0
         self.numsteps = 0
         self.dict = {}
+        self.player_char = ['o', 'x']
         self.blockweight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
         # self.blockweight=[1,.9,1,.9,1.1,.9,1,.9,1,1,.9,1,.9,1.1,.9,1,.9,1]
-        for i in range(36):
-            self.zob_store.append(2**i)
 
 
 
-    def smallboardutility(self,board,symbol):
+    def smallboardutility(self,board,move):
         """
         Find weights of each cell
         """
+        board_num = move[0]
+        row_num = 3*move[1]
+        col_num = 3*move[2]
+        cur_big_board = board.big_boards_status[board_num]
+        winning_comb = []
+        winning_comb.append(np.zeros(4)) #0 for bot
+        winning_comb.append(np.zeros(4)) #1 for opposition
+        bot_win_cells = 0
+        opp_win_cells = 0
+        win_chance = np.ones(2)
+        prob_chance = np.zeros(2)
+        for i in range(3):
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+            for j in range(3):
+                curtictoc = cur_big_board[row_num+i][col_num+j]
+                if curtictoc == self.player_char[self.bot_player]:
+                    win_chance[1] = 0
+                    bot_win_cells+=1
+                if curtictoc == self.player_char[self.bot_player^1]:
+                    win_chance[0] = 0
+                    opp_win_cells+=1
+            if win_chance[0] == 1:
+                winning_comb[0][bot_win_cells]+=1
+            if win_chance[1] == 1:
+                winning_comb[1][opp_win_cells]+=1
 
-        for b in range(2):
+        bot_win_cells = 0
+        opp_win_cells = 0
+        win_chance = np.ones(2)
+        prob_chance = np.zeros(2)
+        for i in range(3):
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+            for j in range(3):
+                curtictoc = cur_big_board[row_num+j][col_num+i]
+                if curtictoc == self.player_char[self.bot_player]:
+                    win_chance[1] = 0
+                    bot_win_cells+=1
+                if curtictoc == self.player_char[self.bot_player^1]:
+                    win_chance[0] = 0
+                    opp_win_cells+=1
+            if win_chance[0] == 1:
+                winning_comb[0][bot_win_cells]+=1
+            if win_chance[1] == 1:
+                winning_comb[1][opp_win_cells]+=1 
 
-            #check r1 r2 r3
-            for i in range(3):
-                row=[]
-                row.append(board.small_boards_status[b][i][0])
-                row.append(board.small_boards_status[b][i][1])
-                row.append(board.small_boards_status[b][i][2])
-                
-                temp=self.calculatewincombsb(row,symbol)
-                
-                self.blockweight[b*9+i*3]+=temp
-                self.blockweight[b*9+i*3+1]+=temp
-                self.blockweight[b*9+i*3+2]+=temp
+        bot_win_cells = 0
+        opp_win_cells = 0
+        win_chance = np.ones(2)
+        prob_chance = np.zeros(2)
+        for i in range(3):
+            #for j in range(3):
+            curtictoc = cur_big_board[row_num+i][col_num+i]
+            if curtictoc == self.player_char[self.bot_player]:
+                win_chance[1] = 0
+                bot_win_cells+=1
+            if curtictoc == self.player_char[self.bot_player^1]:
+                win_chance[0] = 0
+                opp_win_cells+=1
+        if win_chance[0] == 1:
+            winning_comb[0][bot_win_cells]+=1
+        if win_chance[1] == 1:
+            winning_comb[1][opp_win_cells]+=1 
 
-            #check c1 c2 c3
-            for i in range(3):
-                col=[]
-                col.append(board.small_boards_status[b][0][i])
-                col.append(board.small_boards_status[b][1][i])
-                col.append(board.small_boards_status[b][2][i])
+        bot_win_cells = 0
+        opp_win_cells = 0
+        win_chance = np.ones(2)
+        prob_chance = np.zeros(2)
+        for i in range(3):
+            #for j in range(3):
+            curtictoc = cur_big_board[row_num+i][col_num+2-i]
+            if curtictoc == self.player_char[self.bot_player]:
+                win_chance[1] = 0
+                bot_win_cells+=1
+            if curtictoc == self.player_char[self.bot_player^1]:
+                win_chance[0] = 0
+                opp_win_cells+=1
+        if win_chance[0] == 1:
+            winning_comb[0][bot_win_cells]+=1
+        if win_chance[1] == 1:
+            winning_comb[1][opp_win_cells]+=1 
 
-                temp=self.calculatewincombsb(col,symbol)
-
-                self.blockweight[b*9+i]+=temp
-                self.blockweight[b*9+i+3]+=temp
-                self.blockweight[b*9+i+6]+=temp
-
-
-            #check dig1
-            dig=[]
-            dig.append(board.small_boards_status[b][0][0])
-            dig.append(board.small_boards_status[b][1][1])
-            dig.append(board.small_boards_status[b][2][2])
-            
-            temp=self.calculatewincombsb(dig,symbol)
-
-            self.blockweight[b*9]+=temp
-            self.blockweight[b*9+4]+=temp
-            self.blockweight[b*9+8]+=temp
-
-            #check dig2
-            dig=[]
-            dig.append(board.small_boards_status[b][0][2])
-            dig.append(board.small_boards_status[b][1][1])
-            dig.append(board.small_boards_status[b][2][0])
-
-            temp=self.calculatewincombsb(dig,symbol)
-            
-            self.blockweight[b*9+2]+=temp
-            self.blockweight[b*9+4]+=temp
-            self.blockweight[b*9+6]+=temp
-
-
-
-    def calculatewincombsb(self,v,symbol):
-        """
-        Calculate weight from each row,column,dig
-        """
-
-        weight=0
-
-        if symbol=='x':
-            opp='o'
-        else:
-            opp='x'
-
-        #checking edge case
-        if v.count(symbol)==2 and v.count('-')==1:
-            weight=100
-        elif v.count(symbol)==3:
-            weight=1000
-        elif v.count(opp)==2 and v.count('-')==1:
-            weight=-110
-        elif v.count(opp)==3:
-            weight=-1010
-
-        #checking normal cases
-        if 'd' in v:
-            weight=-0.5
-        elif ((symbol in v) and (opp in v)):
-            weight=-0.5 
-        elif (symbol in v) and (opp not in v):
-            weight+=5
-        elif (opp in v) and (symbol not in v):
-            weight+=-5
-        elif ('-' in v) and (symbol not in v) and (opp not in v):
-            weight+=0   
-           
-        return weight
-
-
-
-    def calculatewincomb(self,v,symbol,blkno):
-        """
-        Calculate status of each row,column,dig
-        """
-
-        blkwt=self.blockweight[blkno]
-        utility=200
-
-        if symbol=='x':
-            opp='o'
-        else:
-            opp='x'
-
-        #checking edge cases
-        if v.count(symbol)==2 and v.count('-')==1:
-            utility+=10
-            if blkwt<0:
-                blkwt+=-blkwt+10000
-            else:
-                blkwt+=10000
-
-        elif v.count(symbol)==3:
-            utility+=100
-            if blkwt<0:
-                blkwt+=-blkwt+100000
-            else:
-                blkwt+=100000
-
-        elif v.count(opp)==2 and v.count('-')==1:
-            utility-=10
-            if blkwt<0:
-                blkwt+=-10100
-            else:
-                blkwt+=-blkwt-10100
-
-        elif v.count(opp)==3:
-            utility-=100
-            if blkwt<0:
-                blkwt+=-110000
-            else:
-                blkwt+=-blkwt-110000
-
-       #checking normal cases
-        if (symbol in v) and (opp not in v):
-            utility+=1
-            blkwt+=.5
-        elif (opp in v) and (symbol not in v):
-            utility+=-1.1
-            blkwt-=.5
-        elif ('-' in v) and (symbol not in v) and (opp not in v):
-            utility+=.5
-        elif (symbol in v) and (opp in v):
-            utility+=0
-            blkwt-=.3 
-           
-
-        self.blockweight[blkno]=blkwt
-        return utility
+        small_util = 1.2*(winning_comb[0][1] -winning_comb[1][1]) + 4*(winning_comb[0][2] - winning_comb[1][2])
+        if winning_comb[0][3] == 1:
+            small_util = 17
+        if winning_comb[1][3] == 1: 
+            small_util = -17
+        return(small_util)
 
 
 
-    def blockutility(self,board,b,r,c,symbol):
+    def blockutilityondraw(self,board):
         """
         Calculate utility of each cell of big board
         """
+        draw_util = 0
+        bot = self.player_char[self.bot_player]
+        opp = self.player_char[self.bot_player^1]
+        cur_small_board = board.small_boards_status
+       	for m in range(2):
+               for i in range(3):
+                   for j in range(3):
+                        if i%2 == 0 and j%2 == 0 and cur_small_board[m][i][j] == self.player_char[self.bot_player]:
+                           draw_util += 4
+                        elif i%2 == 0 and j%2 == 0 and cur_small_board[m][i][j] == self.player_char[self.bot_player^1]:
+                           draw_util -= 4
+                        elif i%2 == 1 and j%2 == 1 and cur_small_board[m][i][j] == self.player_char[self.bot_player]:
+                            draw_util +=3
+                        elif i%2 == 1 and j%2 == 1 and cur_small_board[m][i][j] == self.player_char[self.bot_player^1]:
+                            draw_util -=3
+                        elif ((i%2 == 0 and j%2 ==1) or (i%2 ==1 and j%2 == 0)) and cur_small_board[m][i][j] == self.player_char[self.bot_player^1]:
+                            draw_util -=6
+                        elif ((i%2 == 0 and j%2 ==1) or (i%2 ==1 and j%2 == 0)) and cur_small_board[m][i][j] == self.player_char[self.bot_player]:
+                            draw_util +=6
+        return draw_util
 
-        #r1 r2 r3 c1 c2 c3 d1 d2
-        utilityvector=[]
-        blkno=9*b+(3*r+c)/3
-      
-        #check r1 r2 r3
+
+
+    def check_prob_win_big(self,board,board_num,row_num,col_num,player):
+        cur_big_board = board.big_boards_status[board_num]
         for i in range(3):
-            row=[]
-            row.append(board.big_boards_status[b][r+i][c])
-            row.append(board.big_boards_status[b][r+i][c+1])
-            row.append(board.big_boards_status[b][r+i][c+2])
-
-            temp=self.calculatewincomb(row,symbol,blkno)
-            utilityvector.append(temp)
-            
-
-        #check c1 c2 c3
+            player_comb = 0
+            for j in range(3):
+                if (cur_big_board[3*row_num+i][3*col_num+j] == self.player_char[player]
+                    or cur_big_board[3*row_num+i][3*col_num+j] == '-'):
+                    player_comb = 1
+                else:
+                    player_comb = 0
+                    break
+            if player_comb == 1:
+                return 1
         for i in range(3):
-            col=[]
-            col.append(board.big_boards_status[b][r][c+i])
-            col.append(board.big_boards_status[b][r+1][c+i])
-            col.append(board.big_boards_status[b][r+2][c+i])
+            player_comb = 0
+            for j in range(3):
+                if (cur_big_board[3*row_num+j][3*col_num+i] == self.player_char[player]
+                    or cur_big_board[3*row_num+j][3*col_num+i] == '-'):
+                    player_comb = 1
+                else:
+                    player_comb = 0
+                    break
+            if player_comb == 1:
+                return 1
+        for i in range(3):
+            #for j in range(3):
+            player_comb = 0
+            if (cur_big_board[3*row_num+i][3*col_num+i] == self.player_char[player]
+                or cur_big_board[3*row_num+i][3*col_num+i] == '-'):
+                player_comb = 1
+            else:
+                player_comb = 0
+                break
+        if player_comb == 1:
+            return 1
+        for i in range(3):
 
-            temp=self.calculatewincomb(col,symbol,blkno)
-            utilityvector.append(temp)
-            
+            if (cur_big_board[3*row_num+i][3*col_num+2-i] == self.player_char[player]
+                or cur_big_board[3*row_num+i][3*col_num+2-i] == '-'):
+                player_comb = 1
+            else:
+                player_comb = 0
+                break
+        if player_comb ==1:
+            return 1
 
-
-        #check dig1
-        dig=[]
-        dig.append(board.big_boards_status[b][r][c])
-        dig.append(board.big_boards_status[b][r+1][c+1])
-        dig.append(board.big_boards_status[b][r+2][c+2])
-
-        temp=self.calculatewincomb(dig,symbol,blkno)
-        utilityvector.append(temp)
-        
-
-
-        #check dig2
-        dig=[]
-        dig.append(board.big_boards_status[b][r][c+2])
-        dig.append(board.big_boards_status[b][r+1][c+1])
-        dig.append(board.big_boards_status[b][r+2][c])
-
-        temp=self.calculatewincomb(dig,symbol,blkno)
-        utilityvector.append(temp)
-        
-
-
-        return(sum(utilityvector))
+        return 0
 
 
 
@@ -263,147 +219,239 @@ class Player8:
         Heuristic function
         """
         utility=0
+        util_bot = 0
+        util_opp = 0
         # self.blockweight=[1,.9,1,.9,1.1,.9,1,.9,1,1,.9,1,.9,1.1,.9,1,.9,1]
         self.blockweight=[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
-
-        #calculating weights of each block
-        self.smallboardutility(board,symbol)
-        
-        #calculating big board utility 
-        for i in range(2):
-            for j in range(3):
-                for k in range(3):
-                    a=self.blockutility(board,i,3*j,k*3,symbol)
-                    b=self.blockweight[9*i+j*3+k]
-                    utility+=a*b
-
+        winning_comb = []
+        winning_comb.append(np.zeros(4)) #0 for bot
+        winning_comb.append(np.zeros(4)) #1 for opposition
        
-
-        # if symbol!=self.map_symbol[self.player]:
-            # utility=-utility
-        
-
-########TESTING##################################
-        # print "###############board vs utility####################33"
-        # board.print_board()
-        # print utility
-        # print "###############board vs utility####################33"
-        # print
-        # print
-        # print
-        # a=raw_input()
-#################TESTING############################################
-
-        return(utility)
-
-
-    def initialise_hashtable(self , board):
-        self.dict = {}
         for m in range(2):
             for i in range(3):
+                bot_win_cells = 0
+                opp_win_cells = 0
+                win_chance = np.ones(2)
+                prob_chance = np.zeros(2)
+                lookat = []
                 for j in range(3):
-                    hash_value =0
-                    if(m == 0):
-                        hash_variable = 0
-                    else:
-                        hash_variable = 8
-                    for k in range(3):
-                        for l in range(3):
-                            x = board.big_boards_status[m][3*i+k][3*j+l]
-                            if (x == self.map_symbol[self.max_player]):
-                                hash_value ^= self.zob_store[2*hash_variable]
-                            elif (x == self.map_symbol[(self.max_player)^1]):
-                                hash_value ^= self.zob_store[2*hash_variable+1]
-                            hash_variable +=1
-                    self.hash_store[m][i][j] = hash_value
-        #print self.hash_store
+                    if board.small_boards_status[m][i][j] == self.player_char[self.bot_player]:
+                        win_chance[1] = 0
+                        bot_win_cells+=1
+                    if board.small_boards_status[m][i][j] == self.player_char[self.bot_player^1]:
+                        win_chance[0] = 0
+                        opp_win_cells+=1
+                    if board.small_boards_status[m][i][j] == 'd':
+                        win_chance[0] = 0
+                        win_chance[1] = 0
+                    if board.small_boards_status[m][i][j] == '-':
+                        prob_chance[0] =  self.check_prob_win_big(board,m,i,j,self.bot_player)
+                        prob_chance[1] =  self.check_prob_win_big(board,m,i,j,self.bot_player^1)
+                        if prob_chance[0] == 1 and prob_chance[1] == 1:
+                            lookat.append([m,i,j])
+                        if prob_chance[0] == 0:
+                            win_chance[0] = 0
+                        if prob_chance[1] == 0:
+                            win_chance[1] = 0
+                if win_chance[0] == 1:
+                    winning_comb[0][bot_win_cells] +=1
+                if win_chance[1] == 1:
+                    winning_comb[1][opp_win_cells] +=1
+                if win_chance[0]==1 or win_chance[1] ==1:
+                    for z in range(len(lookat)):
+                        utility+=self.smallboardutility(board,lookat[z])
 
+        #winning_comb.append(np.zeros(4)) #0 for bot
+        #winning_comb.append(np.zeros(4)) #1 for opposition
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+        #for m in range(2):
+            for i in range(3):
+                bot_win_cells = 0
+                opp_win_cells = 0
+                win_chance = np.ones(2)
+                prob_chance = np.zeros(2)
+                lookat = []
+                for j in range(3):
+                    if board.small_boards_status[m][j][i] == self.player_char[self.bot_player]:
+                        win_chance[1] = 0
+                        bot_win_cells+=1
+                    if board.small_boards_status[m][j][i] == self.player_char[self.bot_player^1]:
+                        win_chance[0] = 0
+                        opp_win_cells+=1
+                    if board.small_boards_status[m][j][i] == 'd':
+                        win_chance[0] = 0
+                        win_chance[1] = 0
+                    if board.small_boards_status[m][j][i] == '-':
+                        prob_chance[0] =  self.check_prob_win_big(board,m,j,i,self.bot_player)
+                        prob_chance[1] =  self.check_prob_win_big(board,m,j,i,self.bot_player^1)
+                        if prob_chance[0] == 1 and prob_chance[1] == 1:
+                            lookat.append([m,j,i])
+                        if prob_chance[0] == 0:
+                            win_chance[0] = 0
+                        if prob_chance[1] == 0:
+                            win_chance[1] = 0
+                if win_chance[0] == 1:
+                    winning_comb[0][bot_win_cells] +=1
+                if win_chance[1] == 1:
+                    winning_comb[1][opp_win_cells] +=1
+                if win_chance[0]==1 or win_chance[1] ==1:
+                    for z in range(len(lookat)):
+                        utility+=self.smallboardutility(board,lookat[z])
 
+        #winning_comb.append(np.zeros(4)) #0 for bot
+        #winning_comb.append(np.zeros(4)) #1 for opposition
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+        #for m in range(2):
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+            for i in range(3):
+                #for j in range(3):
+                if board.small_boards_status[m][i][i] == self.player_char[self.bot_player]:
+                    win_chance[1] = 0
+                    bot_win_cells+=1
+                if board.small_boards_status[m][i][i] == self.player_char[self.bot_player^1]:
+                    win_chance[0] = 0
+                    opp_win_cells+=1
+                if board.small_boards_status[m][i][i] == 'd':
+                    win_chance[0] = 0
+                    win_chance[1] = 0
+                if board.small_boards_status[m][i][i] == '-':
+                    prob_chance[0] =  self.check_prob_win_big(board,m,i,i,self.bot_player)
+                    prob_chance[1] =  self.check_prob_win_big(board,m,i,i,self.bot_player^1)
+                    if prob_chance[0] == 1 and prob_chance[1] == 1:
+                        lookat.append([m,i,i])
+                    if prob_chance[0] == 0:
+                        win_chance[0] = 0
+                    if prob_chance[1] == 0:
+                        win_chance[1] = 0
+            if win_chance[0] == 1:
+                winning_comb[0][bot_win_cells] +=1
+            if win_chance[1] == 1:
+                winning_comb[1][opp_win_cells] +=1
+            if win_chance[0]==1 or win_chance[1] ==1:
+                for z in range(len(lookat)):
+                    utility+=self.smallboardutility(board,lookat[z])
 
-    def update_hashtable(self,move,player):
-    	#print "Update function called"
-    	#print self.hash_store
-        board_num = move[0]
-        row_num = move[1]/3
-        col_num = move[2]/3
-        if(board_num == 0):
-            hash_var = 3*(move[1]%3) + (move[2]%3)
-        else:
-            hash_var = 3*(move[1]%3) + (move[2]%3)+8
-        if (player == self.max_player):        
-            self.hash_store[board_num][row_num][col_num] ^= self.zob_store[2*hash_var]
-        else:
-            self.hash_store[board_num][row_num][col_num] ^= self.zob_store[2*hash_var+1]
-    
+        #winning_comb.append(np.zeros(4)) #0 for bot
+        #winning_comb.append(np.zeros(4)) #1 for opposition
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+        #for m in range(2):
+            bot_win_cells = 0
+            opp_win_cells = 0
+            win_chance = np.ones(2)
+            prob_chance = np.zeros(2)
+            lookat = []
+            for i in range(3):
+                #for j in range(3):
+                if board.small_boards_status[m][i][2-i] == self.player_char[self.bot_player]:
+                    win_chance[1] = 0
+                    bot_win_cells+=1
+                if board.small_boards_status[m][i][2-i] == self.player_char[self.bot_player^1]:
+                    win_chance[0] = 0
+                    opp_win_cells+=1
+                if board.small_boards_status[m][i][2-i] == 'd':
+                    win_chance[0] = 0
+                    win_chance[1] = 0
+                if board.small_boards_status[m][i][2-i] == '-':
+                    prob_chance[0] =  self.check_prob_win_big(board,m,i,2-i,self.bot_player)
+                    prob_chance[1] =  self.check_prob_win_big(board,m,i,2-i,self.bot_player^1)
+                    if prob_chance[0] == 1 and prob_chance[1] == 1:
+                        lookat.append([m,i,2-i])
+                    if prob_chance[0] == 0:
+                        win_chance[0] = 0
+                    if prob_chance[1] == 0:
+                        win_chance[1] = 0
+            if win_chance[0] == 1:
+                winning_comb[0][bot_win_cells] +=1
+            if win_chance[1] == 1:
+                winning_comb[1][opp_win_cells] +=1
+            if win_chance[0]==1 or win_chance[1] ==1:
+                for z in range(len(lookat)):
+                    utility+=self.smallboardutility(board,lookat[z])
+        utility += 17* (winning_comb[0][1] -winning_comb[1][1]) + 134* (winning_comb[0][2] - winning_comb[1][2])
+        if winning_comb[0][3] == 1:
+            utility = self.inf
+        if winning_comb[1][3] == 1: 
+            utility = -self.inf
+        return(utility)
+
     
         
-    def prunealphabeta(self,board,depth,player,player_move,alpha,beta,prev):
+    def prunealphabeta(self,board,depth,player,player_move,alphaplayer,betaplayer,prev):
         """
         minimax+alphabeta
         """
-
-##########################testing#################################
-        # print "#############testing###################33"
-        # print "self_player"
-        # print self.player
-        # print "player"
-        # print prev
-        # a=raw_input()
-        # print "#############testing###################33"
-##########################testing#################################
-
+        if board.find_terminal_state() == (self.player_char[self.bot_player],'WON'):
+            return self.inf
+        if board.find_terminal_state() == (self.player_char[self.bot_player^1],'WON'):
+            return -self.inf
+        if board.find_terminal_state() == ('NONE','DRAW'):
+            return self.blockutilityondraw(board)
+        if  depth == 0:
+            return self.utility(board,self.player_char[prev])
         if time() - self.start > self.limit:
-            return self.utility(board,self.map_symbol[self.player])
-
-        if board.find_terminal_state() != ('CONTINUE','-') or depth == 0:
-            return self.utility(board,self.map_symbol[self.player])
-
+            return self.utility(board,self.player_char[prev])
         moves_available = board.find_valid_move_cells(player_move)
         
-        if player == self.max_player :
+        tempbonusmove = self.bonus_move_cur[player]
+        if player == self.bot_player :
             cur_utility = -self.inf
         else:
             cur_utility = self.inf
-
-        tempbonusmove = self.bonus_move_cur[player]
-        
+        #random.shuffle(moves_available)
+        arr2 = []
         for moves in moves_available:
-
+            sort_temp_board = deepcopy(board)
+            sort_temp_board.update(player_move,moves,self.player_char[self.bot_player])
+            arr2.append((self.utility(sort_temp_board,self.player_char[self.bot_player]),moves)) 
+        self.nextmoves = sorted(arr2,key= lambda x:x[0])
+        self.nextmoves.reverse()
+        myarr = [x[1] for x in self.nextmoves]
+        for moves in myarr:
             self.bonus_move_cur[player] = tempbonusmove
-
-            self.update_hashtable(moves,player)
-            
-            gamepos,status = board.update(player_move,moves,self.map_symbol[player])
-            if status:
-                self.bonus_move_cur[player] ^= 1
-            else:
+            tempboard = deepcopy(board)
+            gamepos,status = tempboard.update(player_move,moves,self.player_char[player])
+            if not status: #and self.bonus_move_cur[player] == 0:
                 self.bonus_move_cur[player] = 0
+            elif status:
+                self.bonus_move_cur[player] ^= 1
             
-            if player == self.max_player:
-                if status and self.bonus_move_cur[player] == 1:
-                    cur_utility = max(cur_utility,self.prunealphabeta(board,depth-1,
-                                        player,moves,alpha,beta,player))
+            if player == self.bot_player: #bot playing
+                if status and self.bonus_move_cur[player] == 1: #bot has bonus 
+                    max_minmax = self.prunealphabeta(tempboard,depth-1,
+                                        player,moves,alphaplayer,betaplayer,player)
+                    cur_utility = max(cur_utility,max_minmax)
                     self.bonus_move_cur[player] = 0
                 else:
-                    cur_utility = max(cur_utility,self.prunealphabeta(board,depth-1,
-                                        player^1,moves,alpha,beta,player))
-                alpha = max(alpha,cur_utility)
+                    max_minmax = self.prunealphabeta(tempboard,depth-1,
+                                        player^1,moves,alphaplayer,betaplayer,player)
+                    cur_utility = max(cur_utility,max_minmax)
+                alphaplayer = max(alphaplayer,cur_utility)  #recursive minmax
             else:
-                if status and self.bonus_move_cur[player] == 1:
-                    cur_utility = min(cur_utility,self.prunealphabeta(board,depth-1,
-                                        player,moves,alpha,beta,player))
-                    self.bonus_move_cur[player] = 0
+                if status and self.bonus_move_cur[player] == 1: #opp has bonus
+                    min_minmax = self.prunealphabeta(tempboard,depth-1,
+                                        player,moves,alphaplayer,betaplayer,player)
+                    cur_utility = min(cur_utility,min_minmax)
+                    self.bonus_move_cur[player] = 0        
                 else:
-                    cur_utility = min(cur_utility,self.prunealphabeta(board,depth-1,
-                                        player^1,moves,alpha,beta,player))
-                beta = min(beta,cur_utility)
+                    min_minmax = self.prunealphabeta(tempboard,depth-1,
+                                        player^1,moves,alphaplayer,betaplayer,player)
+                    cur_utility = min(cur_utility,min_minmax)
+                betaplayer = min(betaplayer,cur_utility)   #recursive minmax
 
-            self.update_hashtable(moves,player)
-
-            board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
-            board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
             
-            if(beta <= alpha):
+            if(betaplayer <= alphaplayer):
                 break
             if time() - self.start > self.limit:
                 break
@@ -415,90 +463,64 @@ class Player8:
 
     def alphabetamove(self,board,old_move,player,depth):
         """
-        Preprocessing for alpha beta algorithm
+        Preprocessing for alphaplayer betaplayer algorithm
         """
 
         #find all possible moves
-        self.nextmoves = board.find_valid_move_cells(old_move)
-        
-        #initialise maximum value
-        curmax = -self.inf
-
-        #tells if player has bonus move 
+        arr = board.find_valid_move_cells(old_move)
+         #tells if player has bonus move 
         tempbonusmove = self.bonus_move_cur[player]
+        #initialise maximum value
+        curmax = -self.inf-1
+        arr2 = []
+        for moves in arr:
+            sort_temp_board = deepcopy(board)
+            sort_temp_board.update(old_move,moves,self.player_char[player])
+            arr2.append((self.utility(sort_temp_board,self.player_char[player]),moves))
         
-        for moves in self.nextmoves:
-
+        self.nextmoves = sorted(arr2,key= lambda x:x[0])
+        self.nextmoves.reverse()
+        myarr = [x[1] for x in self.nextmoves]
+        for moves in myarr:
+            
             self.bonus_move_cur[player] = tempbonusmove
 
-            self.update_hashtable(moves,player)
-            
             #checks if any cell won
-            gamepos,status = board.update(old_move,moves,self.map_symbol[player])
-            if status:
-                self.bonus_move_cur[player] ^= 1
-            else:
+            tempboard = deepcopy(board)
+            gamepos,status = tempboard.update(old_move,moves,self.player_char[player])
+            if not status:
                 self.bonus_move_cur[player] = 0
+            elif status:
+                self.bonus_move_cur[player] ^= 1
             
             #check utility after winning 
             if status and (self.bonus_move_cur[player] == 1):
-                player_utility = self.prunealphabeta(board,depth - 1,player,moves,-self.inf,self.inf,player)#same player moves
+                player_utility = self.prunealphabeta(tempboard,depth,player,moves,-self.inf,self.inf,player)#same player moves
             else:
-                player_utility = self.prunealphabeta(board,depth-1,player^1,moves,-self.inf,self.inf,player)#opponent moves
+                player_utility = self.prunealphabeta(tempboard,depth,player^1,moves,-self.inf,self.inf,player)#opponent moves
             
             #restore the board states
-            board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
-            board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
+            #board.big_boards_status[moves[0]][moves[1]][moves[2]] = "-"
+            #board.small_boards_status[moves[0]][moves[1]/3][moves[2]/3] = "-"
             
-            self.update_hashtable(moves,player)
-
-
-            if player_utility > curmax and player==self.max_player:
+            if player_utility > curmax:
                 cur_best_move = moves
                 curmax = player_utility
-           
-
-
-##########################testing#################################
-            # print "############curmax test###############33"
-            # print player_utility
-            # print "curmax is below"
-            # print curmax
-            # print "############curmax test###############33"
-            # a=raw_input()
-##########################testing#################################
         
         self.bonus_move_cur[player] = tempbonusmove
         
-##########################testing#################################
-        # print "##########final utility##################"
-        # print curmax
-        # a=raw_input()
-        # print "##########final utility##################"
-##########################testing#################################
-
         return cur_best_move
-   
+
+
 
     def idfs(self,board,oldmv,tree_level,player):
         """
         idfs returns best move
         """
 
-        for depth in range(1,self.maxdepth):
-
-			# self.transpositionTable={}
-
-#####################testing###########################
-            # print "######depth test#########"
-            # print depth
-            # print "######depth test#########"
-            # a=raw_input()
-#####################testing###########################
-
-            if(time()-self.start)>self.limit:
-                break
-            output = self.alphabetamove(board,oldmv,player,depth)
+        #if(time()-self.start)>self.limit:
+        #    break
+        output = self.alphabetamove(board,oldmv,player,self.startdepth)
 		
         return output
    
@@ -511,14 +533,17 @@ class Player8:
     
         #start timer
         self.start=time()
-
+        self.movecounter+=1
+        if(self.movecounter > 17 ):
+            self.startdepth+=1
+            self.movecounter = 0
         #initialising players
         if symbol=='x':
-            self.max_player=1
+            self.bot_player=1
             self.player=1
             self.opponent=0
         else:
-            self.max_player=0
+            self.bot_player=0
             self.player=0
             self.opponent=1
 
@@ -527,32 +552,33 @@ class Player8:
             if oldmove == (-1,-1,-1):
                 return self.default
         
-
             #calculate from hash tables
             depth=1
 
             tempboard=deepcopy(gameboard)
             self.bonus_move_cur=[0,0]
-            if(self.last_blk_won):
-                self.bonus_move_cur[self.max_player]^=1
+            if(self.last_function_call):
+                self.bonus_move_cur[self.bot_player]^=1
             else:
-                self.bonus_move_cur[self.max_player]=0
+                self.bonus_move_cur[self.bot_player]=0
 
             tempmove=self.idfs(tempboard,oldmove,depth,self.player)
+            last_check_board = deepcopy(tempboard)
+            gamepos,status=last_check_board.update(oldmove,tempmove,self.player_char[self.player])
 
-            status,blk_won=tempboard.update(oldmove,tempmove,self.map_symbol[self.player])
-
-            if blk_won:
-                self.last_blk_won^=1
-            else:
-                self.last_blk_won=0
+            if not status:
+                self.last_function_call = 0
+            elif status:
+                self.last_function_call ^=1
 
             #restore the board states
-            tempboard.big_boards_status[tempmove[0]][tempmove[1]][tempmove[2]] = "-"
-            tempboard.small_boards_status[tempmove[0]][tempmove[1]/3][tempmove[2]/3] = "-"
+            #tempboard.big_boards_status[tempmove[0]][tempmove[1]][tempmove[2]] = "-"
+            #tempboard.small_boards_status[tempmove[0]][tempmove[1]/3][tempmove[2]/3] = "-"
+            #print time()-self.start
 
-
-            print time()-self.start
+    	    cells = gameboard.find_valid_move_cells(oldmove)
+            if tempmove not in cells:
+        		return cells[random.randrange(len(cells))]
             return tempmove
 
         except Exception as e:

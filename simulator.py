@@ -17,9 +17,8 @@ import time
 import copy
 import traceback
 
-from team8 import Player8
-from temp import Player_final
-# from bot import Bot
+from team8 import Team8
+from bot import Bot
 
 # TIME = 24
 TIME = 100000
@@ -384,18 +383,19 @@ if __name__ == '__main__':
 	option = sys.argv[1]	
 	if option == '1':
 		obj2 = Random_Player()
-		obj1 = Player8()
+		obj1 = Team8()
 		# obj2 = Random_Player()
 
 	elif option == '2':
 		# obj1 = Random_Player()
-		obj2 = Player8()
-		obj1 = Manual_Player()
+		# obj1 = Team8()
+		obj1 = Bot()
+		obj2 = Manual_Player()
 	elif option == '3':
 		# obj1 = Player8()
-		obj2 = Player8()
+		obj2 = Team8()
 		# obj2 = Bot()
-		obj1 = Player_final()
+		# obj1 = Player_final()
 	else:
 		print 'Invalid option'
 		sys.exit(1)
