@@ -1,0 +1,2436 @@
+##################################### START OF TEAM71 VS. TEAM2 #####################################
+
+Team71 (P1,x) is going first
+Team2 (P2,0) is going second
+
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 4), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 4), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 5), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 3), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 5), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 3), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 1), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 7), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 1), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 7), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 1), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 7), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 1), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 7), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 2), 'heuristic : ', -370000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 8), 'heuristic : ', -370000)
+('The Chosen Move = ', (1, 7, 7))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  o - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 2), 'heuristic : ', -360000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 0), 'heuristic : ', -360000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 2), 'heuristic : ', -360000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 0), 'heuristic : ', -360000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 1), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 1), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 0), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 2), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 0), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 2), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 1), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 0), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 2), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 1), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 1), 'heuristic : ', -359500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 0), 'heuristic : ', -359500)
+('The Chosen Move = ', (1, 1, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  o - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 5), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 3), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 5), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 3), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 3), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 5), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 3), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 5), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 3), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 5), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 3), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 5), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 4), 'heuristic : ', -340000)
+('The Chosen Move = ', (1, 2, 4))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 2), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 0), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 2), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 0), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 0), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 0), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 2), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 1), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 2), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 1), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 0), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 2), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 1), 'heuristic : ', -344000)
+('The Chosen Move = ', (1, 4, 2))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - x  - - -  - - -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - x  - - -  - - o
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 8), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 6), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 8), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 6), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 6), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 8), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 6), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 8), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 7), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 6), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 7), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 6), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 8), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 7), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 7), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 7), 'heuristic : ', -344000)
+('The Chosen Move = ', (1, 4, 6))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - -  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 5), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 3), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 5), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 3), 'heuristic : ', -349500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 3), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 5), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 3), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 5), 'heuristic : ', -344500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 5), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 5), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 3), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 4), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 4), 'heuristic : ', -344000)
+('The Chosen Move = ', (1, 7, 5))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - - -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - - -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 3), 'heuristic : ', -348500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 5), 'heuristic : ', -348500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 3), 'heuristic : ', -348500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 5), 'heuristic : ', -348500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 5), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 3), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 5), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 3), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 4), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 4), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 3), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 3), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 5), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 5), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 4), 'heuristic : ', -343500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 4), 'heuristic : ', -343500)
+('The Chosen Move = ', (0, 2, 4))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 8), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 6), 'heuristic : ', -344000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 8), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 6), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 6), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 8), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 6), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 8), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 7), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 7), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 6), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 6), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 8), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 8), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 7), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 7), 'heuristic : ', -340000)
+('The Chosen Move = ', (1, 0, 8))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  - - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  o - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - -  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 1), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 1), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 1), 'heuristic : ', -340000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 1), 'heuristic : ', -340000)
+('The Chosen Move = ', (1, 6, 2))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  o - -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  - - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 3), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 5), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 3), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 3), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 5), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 3), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 4), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 4), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 3), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 5), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 5), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 4), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 4), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 4), 'heuristic : ', -329500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 4), 'heuristic : ', -329500)
+('The Chosen Move = ', (1, 8, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - - x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  - x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 3), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 5), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 4), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 4), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 4), 'heuristic : ', -319000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 4), 'heuristic : ', -319000)
+('The Chosen Move = ', (1, 2, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - - -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  - - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 5), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 3), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 5), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 3), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 3), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 5), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 4), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 5), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 4), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 3), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 4), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 4), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 4), 'heuristic : ', -307500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 4), 'heuristic : ', -307500)
+('The Chosen Move = ', (0, 6, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - -  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - -      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 8), 'heuristic : ', -313000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 8), 'heuristic : ', -313000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 6), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 6), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 6), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 7), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 7), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 6), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 6), 'heuristic : ', -312000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 8), 'heuristic : ', -309500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 8), 'heuristic : ', -309500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 8), 'heuristic : ', -309500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 7), 'heuristic : ', -309500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 7), 'heuristic : ', -309500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 7), 'heuristic : ', -309500)
+('The Chosen Move = ', (0, 4, 8))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - - -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - - -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 3), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 3), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 3), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 3), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 3), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 4), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 4), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 5), 'heuristic : ', -83125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 4), 'heuristic : ', 381500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 4), 'heuristic : ', 381500)
+('The Chosen Move = ', (1, 0, 4))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x -  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  - - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 7), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 6), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 7), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 7), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 8), 'heuristic : ', -314000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 7), 'heuristic : ', -314000)
+('The Chosen Move = ', (0, 6, 6))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - - o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - o o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  - - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 4), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 3), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 3), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 3), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 4), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 3), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 4), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 4), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 5), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 3), 'heuristic : ', -316000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 4), 'heuristic : ', -316000)
+('The Chosen Move = ', (1, 4, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - o o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - - -  o o -  - o -
+ - - -  - - -  - - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - - -  - - -      - - -  - x -  - - x
+ - o o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - -  - - -  - - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 4), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 5), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 3), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 5), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 4), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 5), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 5), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 5), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 3), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 3), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 3), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 3), 'heuristic : ', -74625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 4), 'heuristic : ', 30250)
+('The Chosen Move = ', (0, 0, 4))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  - - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - -  - - -  - - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - -  - - -  - - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 2), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 0), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 0), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 1), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 2), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 1), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 2), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 2), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 0), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 0), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 1), 'heuristic : ', -315000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 0), 'heuristic : ', -315000)
+('The Chosen Move = ', (0, 4, 2))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  - - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  o - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o -  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 2), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 0), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 0), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 1), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 1), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 2), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 2), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 0), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 0), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 1), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', -319500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 0), 'heuristic : ', -319500)
+('The Chosen Move = ', (1, 5, 2))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  o - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  - x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  o - x      - - x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 2), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 0), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 0), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 1), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 1), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 2), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 0), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 0), 'heuristic : ', -65625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 1), 'heuristic : ', 897500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', 898000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 0), 'heuristic : ', 898000)
+('The Chosen Move = ', (1, 4, 0))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  o - x      x - x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    - - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o -  - o -
+ - - x  - - -  o - x      x o x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o - -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - - -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - - -  o - x      x o x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 7), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 8), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 8), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 6), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 7), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 7), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 8), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 8), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 8), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 6), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 6), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 6), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 6), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 7), 'heuristic : ', -657500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 7), 'heuristic : ', -657500)
+('The Chosen Move = ', (0, 1, 7))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - - -  o - x      x o x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  - - -  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 5), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 4), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 3), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 5), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 5), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 3), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 3), 'heuristic : ', -658500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 4), 'heuristic : ', -658500)
+('The Chosen Move = ', (0, 5, 5))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  - - x  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  - - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  - - x  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - - -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 1), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 1), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 1), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 2), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -639000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 1), 'heuristic : ', -639000)
+('The Chosen Move = ', (1, 7, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  - - x  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  o - x  - - -      - o x  - - -  - - -
+
+ - - -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 1), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 2), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 1), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', -59125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 0), 'heuristic : ', 941000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', 941000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', 941000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 1), 'heuristic : ', 941000)
+('The Chosen Move = ', (0, 6, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o - -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  o - x  - - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o -  o - x      x o x  x - -  x - o
+ - - -  o - x  - - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 4), 'heuristic : ', -643500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 5), 'heuristic : ', -643500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 5), 'heuristic : ', -634000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 3), 'heuristic : ', -634000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 3), 'heuristic : ', -634000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 4), 'heuristic : ', -634000)
+('The Chosen Move = ', (0, 4, 5))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  - - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - - -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 1), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 2), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', -62125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 0), 'heuristic : ', 404000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', 404000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', 404000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 1), 'heuristic : ', 1589000)
+('The Chosen Move = ', (0, 7, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - -  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- - -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o -
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - -
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - - -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 8), 'heuristic : ', -1548500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 8), 'heuristic : ', -1548500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 7), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 7), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 6), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 8), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 8), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 6), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 6), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 8), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 8), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 7), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 7), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 7), 'heuristic : ', -1537500)
+('The Chosen Move = ', (1, 8, 7))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - -  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  - - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - o  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 8), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 8), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 7), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 7), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 6), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 6), 'heuristic : ', -1554500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 6), 'heuristic : ', -1546500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 8), 'heuristic : ', -1546500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 8), 'heuristic : ', -1546500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 7), 'heuristic : ', -1546500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 7), 'heuristic : ', -1546500)
+('The Chosen Move = ', (1, 5, 6))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - o  - - -      - x -  o - x  o x -
+ - - -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  - - o  - - -      - x -  o - x  o x -
+ - o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 5), 'heuristic : ', -1542500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 4), 'heuristic : ', -1542500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 3), 'heuristic : ', -1542500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 3), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 3), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 5), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 5), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 4), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 4), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 4), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 4), 'heuristic : ', -1537500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 4), 'heuristic : ', -1537500)
+('The Chosen Move = ', (0, 7, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ - - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ - o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ - o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ - o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 2), 'heuristic : ', -1538000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 2), 'heuristic : ', -1538000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 0), 'heuristic : ', -1538000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 0), 'heuristic : ', -1528500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 0), 'heuristic : ', -1528500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 0), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 2), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 0), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 2), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 1), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 1), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 0), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 1), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 1), 'heuristic : ', -1457500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 2), 'heuristic : ', -1457500)
+('The Chosen Move = ', (0, 1, 0))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ - - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ - o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ - o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -380125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 2), 'heuristic : ', -380125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', -380125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', -380125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 0), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', 19187000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', 19187000)
+('The Chosen Move = ', (0, 8, 0))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x -  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  - - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 6), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 8), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 6), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 8), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 7), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 6), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 7), 'heuristic : ', -1526500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 8), 'heuristic : ', -1526500)
+('The Chosen Move = ', (0, 0, 6))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - -  - x -  x - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - -      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - -    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 8), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 8), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 6), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 7), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 6), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 7), 'heuristic : ', 1772875)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 1, 8), 'heuristic : ', 1772875)
+('The Chosen Move = ', (0, 2, 8))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - - -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - x    - - o
+- o -    o o -
+- - -    - - -
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 7), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 6), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 6), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 7), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 6), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 7), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 8), 'heuristic : ', 2190125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 7), 'heuristic : ', 2190125)
+('The Chosen Move = ', (1, 6, 7))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - - -  - x -  - - x
+ x o o  o o -  - x -      - x -  - - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- - x    - - o
+- o -    o o -
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - - -  - x -  - - x
+ x o o  o o o  - x -      - x -  - - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  - o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o -    o o -
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - - -  - x -  - - x
+ x o o  o o o  - x -      - x -  - - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  o o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o -
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 2), 'heuristic : ', -20182500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 2), 'heuristic : ', -20182500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 0), 'heuristic : ', -20182500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 0), 'heuristic : ', -20182500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 2), 'heuristic : ', -20182500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 1), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 1), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 1), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 1), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 0), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 0), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 0), 'heuristic : ', -20096000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 2), 'heuristic : ', -20096000)
+('The Chosen Move = ', (1, 0, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  - - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  o o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o -
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o - -  - - o  o o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o -
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', -20182000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', -20182000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 1), 'heuristic : ', 604500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', 604500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 3, 2), 'heuristic : ', 604500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 1), 'heuristic : ', 604500)
+('The Chosen Move = ', (0, 3, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o - -  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o -
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o - o  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  - o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o -
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 6), 'heuristic : ', 2122125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 8), 'heuristic : ', 2122125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 5, 7), 'heuristic : ', 2122125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 3, 8), 'heuristic : ', 2122125)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 4, 7), 'heuristic : ', 2122125)
+('The Chosen Move = ', (1, 3, 6))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - - o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o - o  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 1), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 2), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 2), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 0), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 0), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 2, 1), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 0), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 0), 'heuristic : ', 1780375)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 0), 'heuristic : ', 2015250)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 0, 1), 'heuristic : ', 2016750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 2), 'heuristic : ', 2016750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 1, 2), 'heuristic : ', 2016750)
+('The Chosen Move = ', (0, 0, 1))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o - o  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - - o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - -  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+- o x    - o o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - -      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 8), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 7), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 6), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 8), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 8), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 7), 'heuristic : ', -20212500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 7), 'heuristic : ', -20212500)
+('The Chosen Move = ', (0, 8, 8))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - -      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - x      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - o      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  - - -  o - x      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- - -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -488500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 0), 'heuristic : ', 686500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 0, 0), 'heuristic : ', 1926750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', 1926750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', 1926750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 3), 'heuristic : ', 1927750)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 3), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 4, 0), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 1), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 5), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 5), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 2), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 2, 2), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 5, 1), 'heuristic : ', 100679000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', 100679000)
+('The Chosen Move = ', (0, 8, 3))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - o      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o -  x - -  o - x      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- x -    - - x
+==============================================
+
+
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 0), 'heuristic : ', -101625)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 6, 0), 'heuristic : ', 100646500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 6, 0), 'heuristic : ', 100646500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 8, 2), 'heuristic : ', 100646500)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 8, 2), 'heuristic : ', 100704000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 0), 'heuristic : ', 100704000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 0), 'heuristic : ', 100704000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (1, 7, 2), 'heuristic : ', 100704000)
+('level : ', 0, 'player : ', 0, 'current_move : ', (0, 7, 2), 'heuristic : ', 100704000)
+('The Chosen Move = ', (0, 8, 2))
+('CONTINUE', '-')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - o      - o x  - - -  - x -
+ - x -  x - o  - - -      - x -  o - x  o x -
+ x o x  x - -  o - x      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- x -    - - x
+==============================================
+
+
+('o', 'WON')
+================BigBoard State================
+
+ - x o  - x -  x - -      - x -  - x -  - - x
+ x o o  o o o  - x -      - x -  o o o  - - -
+ - - o  - x -  - - x      - - -  x x o  o o o
+
+ o x -  - - o  o o -      - o -  o o o  x o -
+ - - x  - o x  o - x      x o x  x - -  x - o
+ o - -  o - x  o - -      - o x  - - -  x - -
+
+ - x o  x - o  x - o      - o x  - - -  - x -
+ - x -  x - o  - o -      - x -  o - x  o x -
+ x o x  x - -  o - x      - o -  x - -  - x -
+
+==============SmallBoards States==============
+o o x    - o o
+- o o    o o x
+- x o    - - x
+==============================================
+
+
+Winner: P2
+Message WON
+x: 4  o: 9  d: 0
+###################################### END OF TEAM71 VS. TEAM2 ######################################
+
+Player1 (Team71) points: 0
+Player2 (Team2) points: 86
